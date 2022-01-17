@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+// import { useState, useEffect} from "react";
 import BlogList from "./bloglist";
 import useFetch from "./useFetch";
 
@@ -8,6 +8,9 @@ const Home = () => {
     
     return ( 
         <div className="home">
+            <h1 className="text-3xl font-bold underline">
+                Hello world!
+            </h1>
             { error && <div>{error}</div> } 
             { isPending && <div>Loading...</div> }
             { blogs &&<BlogList blogs={blogs} title="All Blogs" /> }
