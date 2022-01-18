@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className="App bg-[url('./assets/bg-presentation.jpg')] ">
       <Navbar />
       <div className="content">
         <Switch>
