@@ -1,6 +1,6 @@
 // import { useState, useEffect} from "react";
 import BlogList from "./bloglist";
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
 
 
 const Home = () => {

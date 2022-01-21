@@ -35,9 +35,19 @@
   color: #f1356d;
 } */
 .content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 30px auto;
+  padding: 10px;
+  /* background-color: white; */
+  opacity: 0.9;
+ 
+
+}
+
+
+/* page navigation */
+.page_navigation{
+  margin-right: 6rem;
+  margin-top: 1rem;
 }
 
 /* blog previews / list */

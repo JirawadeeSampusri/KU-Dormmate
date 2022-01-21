@@ -1,9 +1,12 @@
 import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
-import Navbar from './navbar';
-import Home from './home';
+import Navbar from './components/navbar';
+import Home from './components/home';
 import Create from './create';
-import BlogDetails from './blogdetails';
+import BlogDetails from './components/blogdetails';
 import NotFound from './notfound';
+import Landing from './components/landing';
+import Card from './components/card';
+import Footer from './components/footer';
 
 
 //sfc
@@ -13,25 +16,39 @@ function App() {
 
   return (
     <Router>
-      <div className="App bg-[url('./assets/bg-presentation.jpg')] ">
-      <Navbar />
-      <div className="content">
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/create">
-            <Create />
-          </Route>
-          <Route path="/blogs/:id">
-            <BlogDetails />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
+      <div  className="  w-full h-screen bg-[url('./assets/bg-presentation.jpg')]">
+        <div className='App'>
+          <Navbar />
+          <div className="content">
+            <Switch>
+              <Route exact path="/">
+                <Landing />
+                <Card />
+              </Route>
+              <Route path="/create">
+                <Create />
+              </Route>
+              <Route path="/blogs/:id">
+                <BlogDetails />
+              </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+          </div>
+          < Footer />
+        </div>
       </div>
-    </div>
+      {/* <div >
+        <Switch>
+                <Route exact path="/">
+                  <Home />
+                  <Home />
+                  <Home />
+                </Route>
+              
+        </Switch>
+      </div> */}
     </Router>
     
   );
