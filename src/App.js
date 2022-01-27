@@ -36,8 +36,9 @@ function App() {
               </Route>
             </Switch>
           </div>
-          < Footer />
+         
         </div>
+        
       </div>
       {/* <div >
         <Switch>
@@ -49,7 +50,9 @@ function App() {
               
         </Switch>
       </div> */}
+      
     </Router>
+    
     
   );
 }
