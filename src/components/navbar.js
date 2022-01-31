@@ -19,7 +19,7 @@ export default function Example() {
     <Disclosure as="nav" >
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 py-2 tablet:px-6 laptop:px-8 bg-blue-500">
+          <div className="max-w-7xl mx-auto px-2 py-2 tablet:px-6 laptop:px-8 ">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center block laptop:hidden">
                 {/* Mobile menu button*/}
@@ -34,17 +34,19 @@ export default function Example() {
               </div>
               <div className="absolute inset-y-0 left-0 flex items-center pr-2 tablet:static tablet:inset-auto tablet:ml-6 tablet:pr-0">
               <img
-                    className="hidden tablet:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                    alt="Workflow"
+                    className="hidden tablet:block h-48 w-auto"
+                    src={require('/Users/worroar/ku-dormmate/src/assets/logo.png')}
+                    // src="./assets/logo.jpg'"
+                    alt="KUdormmate"
                   />
               </div>
             
               <div className="flex-1 flex items-center justify-center tablet:items-stretch tablet:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <img
-                    className="block laptop:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                    className="block laptop:hidden h-11 w-auto"
+                    src={require('/Users/worroar/ku-dormmate/src/assets/logo1.png')}
+                    // src="./assets/logo.jpg'"
                     alt="Workflow"
                   />
                   {/* <img
