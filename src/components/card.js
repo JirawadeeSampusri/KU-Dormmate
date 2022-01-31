@@ -5,7 +5,7 @@ const Card = () => {
         <div class="">
           <section class="max-w-7xl mx-auto px-4 sm:px-6 laptop:px-4 mt-12 mb-12">
             <article>
-                <div class="relative flex items-end font-bold">
+                <div class="relative flex items-end font-bold ">
                     <h2 class="text-2xl">Condominiums</h2>
                     <a href class="ml-10 flex items-center text-gray-400">
                       <span class="text-sm">All Offers</span>
@@ -29,12 +29,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Basic Level
+                                    Price 8,000 - 12,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -46,12 +46,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Basic Level
+                                    Price 8,000 - 12,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -63,12 +63,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
                                     Intermediate Level
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -80,12 +80,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Advanced Level
+                                    Price 4,500 - 6,500 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -115,12 +115,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Basic Level
+                                    Price 8,000 - 12,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -132,12 +132,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Basic Level
+                                    Price 8,000 - 12,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -149,12 +149,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Intermediate Level
+                                    Price 6,000 - 8,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -166,12 +166,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Advanced Level
+                                    Price 4,500 - 6,500 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -201,12 +201,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Basic Level
+                                    Price 8,000 - 12,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -218,12 +218,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Basic Level
+                                    Price 8,000 - 12,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -235,12 +235,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Intermediate Level
+                                    Price 6,000 - 8,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -252,12 +252,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Advanced Level
+                                    Price 4,500 - 6,500 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -287,12 +287,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Basic Level
+                                    Price 8,000 - 12,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -304,12 +304,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Basic Level
+                                    Price 8,000 - 12,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -321,12 +321,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Intermediate Level
+                                    Price 6,000 - 8,000 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
@@ -338,12 +338,12 @@ const Card = () => {
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-indigo-600 py-1 px-2 text-white rounded-lg" href="#">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Advanced Level
+                                    Price 4,500 - 6,500 Baht
                                 </a>
                             </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-indigo-600">
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         </div>
                     </article>
