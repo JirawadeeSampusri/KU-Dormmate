@@ -35,7 +35,7 @@ export default function Example() {
               <div className="absolute inset-y-0 left-0 flex items-center pr-2 tablet:static tablet:inset-auto tablet:ml-6 tablet:pr-0">
               <img
                     className="hidden tablet:block h-48 w-auto"
-                    src={require('/Users/worroar/ku-dormmate/src/assets/logo.png')}
+                    src={require('./photo/logo.png')}
                     // src="./assets/logo.jpg'"
                     alt="KUdormmate"
                   />
@@ -45,7 +45,7 @@ export default function Example() {
                 <div className="flex-shrink-0 flex items-center">
                   <img
                     className="block laptop:hidden h-11 w-auto"
-                    src={require('/Users/worroar/ku-dormmate/src/assets/logo1.png')}
+                    src={require('./photo/logo.png')}
                     // src="./assets/logo.jpg'"
                     alt="Workflow"
                   />
