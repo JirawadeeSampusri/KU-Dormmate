@@ -7,50 +7,53 @@ import NotFound from './notfound';
 import Landing from './components/landing';
 import Card from './components/card';
 import Footer from './components/footer';
-
+import Login from './login';
+import Register from './register';
 
 //sfc
 
 function App() {
   // const title = 'KU Dorm-Mate'
-
+  
   return (
     <Router>
       <div  className="  w-full h-screen bg-[url('./assets/bg-presentation.jpg')]">
-        <div className='App'>
-          <Navbar />
-          <div className="content">
+      <div className="App">
+          <Router>
+
             <Switch>
-              <Route exact path="/">
-                <Landing />
-                <Card />
-              </Route>
-              <Route path="/create">
-                <Create />
-              </Route>
-              <Route path="/blogs/:id">
-                <BlogDetails />
-              </Route>
-              <Route path="*">
-                <NotFound />
-              </Route>
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
+              <div>
+                <Navbar />
+                <div className="content">
+                  <Switch>
+                    <Route exact path="/">
+                      <Landing />
+                      <Card />
+                    </Route>
+                    <Route path="/create">
+                      <Create />
+                    </Route>
+                    <Route path="/blogs/:id">
+                      <BlogDetails />
+                    </Route>
+                    <Route path="*">
+                      <NotFound />
+                    </Route>
+                  </Switch>
+                </div>
+              </div>
+
             </Switch>
-          </div>
-         
-        </div>
-        < Footer />
+          </Router>
+          < Footer />
         
       </div>
-      {/* <div >
-        <Switch>
-                <Route exact path="/">
-                  <Home />
-                  <Home />
-                  <Home />
-                </Route>
-              
-        </Switch>
-      </div> */}
+      <div >
+      </div >
+     
+      </div>
       
     </Router>
     
