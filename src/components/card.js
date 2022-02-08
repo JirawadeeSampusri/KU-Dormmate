@@ -23,8 +23,9 @@ const Card = () => {
                 <section class="mt-6 grid tablet:grid-cols-2 laptop:grid-cols-4 gap-x-6 gap-y-8">      
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/07/24/01/42/zebra-dove-6488440_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+
+                            <img src={require('./photo/image2.jpeg')}
+                              
                                 class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
@@ -40,9 +41,9 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/08/20/45/bird-6607863_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img3.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -57,15 +58,15 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/08/03/11/01/stairs-6519085_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img4.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
                                 <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                     <span class="absolute inset-0"></span>
-                                    Intermediate Level
+                                    Price 6,000 - 8,500 Baht
                                 </a>
                             </h3>
                             <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
@@ -74,10 +75,11 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/12/17/43/parrot-feathers-6619082_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/image1.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
+                        
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
                                 <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
@@ -109,9 +111,9 @@ const Card = () => {
                 <section class="mt-6 grid tablet:grid-cols-2 laptop:grid-cols-4 gap-x-6 gap-y-8">      
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/07/24/01/42/zebra-dove-6488440_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img5.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -126,9 +128,9 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/08/20/45/bird-6607863_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img6.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -143,9 +145,9 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/08/03/11/01/stairs-6519085_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img7.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -160,9 +162,9 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/12/17/43/parrot-feathers-6619082_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img8.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -195,9 +197,26 @@ const Card = () => {
                 <section class="mt-6 grid tablet:grid-cols-2 laptop:grid-cols-4 gap-x-6 gap-y-8">      
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/07/24/01/42/zebra-dove-6488440_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img9.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
+                        </div>
+                        <div class="px-3 py-4">
+                            <h3 class="text-sm text-gray-500 pb-2">
+                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
+                                    <span class="absolute inset-0"></span>
+                                    Price 3,500 - 5,000 Baht
+                                </a>
+                            </h3>
+                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </article>
+                    <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
+                        <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
+                        <img src={require('./photo/img10.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -212,26 +231,9 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/08/20/45/bird-6607863_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
-                        </div>
-                        <div class="px-3 py-4">
-                            <h3 class="text-sm text-gray-500 pb-2">
-                                <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
-                                    <span class="absolute inset-0"></span>
-                                    Price 8,000 - 12,000 Baht
-                                </a>
-                            </h3>
-                            <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                        </div>
-                    </article>
-                    <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
-                        <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/08/03/11/01/stairs-6519085_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img11.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -246,9 +248,9 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/12/17/43/parrot-feathers-6619082_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img12.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -281,9 +283,9 @@ const Card = () => {
                 <section class="mt-6 grid tablet:grid-cols-2 laptop:grid-cols-4 gap-x-6 gap-y-8">      
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/07/24/01/42/zebra-dove-6488440_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img13.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -298,9 +300,9 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/08/20/45/bird-6607863_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img14.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -315,9 +317,9 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/08/03/11/01/stairs-6519085_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img15.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
@@ -332,9 +334,9 @@ const Card = () => {
                     </article>
                     <article class="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
                         <div class="relative w-full h-80 tablet:h-64 laptop:h-44">
-                            <img src="https://cdn.pixabay.com/photo/2021/09/12/17/43/parrot-feathers-6619082_960_720.jpg"
-                                alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
-                                class="w-full h-full object-center object-cover" />
+                        <img src={require('./photo/img16.jpeg')}
+                              
+                              class="w-full h-full object-center object-cover" />
                         </div>
                         <div class="px-3 py-4">
                             <h3 class="text-sm text-gray-500 pb-2">
