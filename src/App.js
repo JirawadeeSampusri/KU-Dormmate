@@ -9,16 +9,20 @@ import Card from './components/card';
 import Footer from './components/footer';
 import Login from './login';
 import Register from './register';
+import Details from './components/details';
 
 //sfc
 
 function App() {
   // const title = 'KU Dorm-Mate'
-  
+   //bg-[url('./assets/bg-presentation.jpg')]
   return (
     <Router>
-      <div  className="  w-full h-screen bg-[url('./assets/bg-presentation.jpg')]">
-      <div className="App">
+      <div  className="  w-full h-screen bg-gray-50 ">
+        
+        
+      <div className="App bg-gray-50">
+        
           <Router>
 
             <Switch>
@@ -26,11 +30,15 @@ function App() {
               <Route exact path="/register" component={Register} />
               <div>
                 <Navbar />
-                <div className="content">
+                <div className="content ">
+                  
                   <Switch>
                     <Route exact path="/">
                       <Landing />
                       <Card />
+                    </Route>
+                    <Route path="/details" component={Details} >
+                      <Details />
                     </Route>
                     <Route path="/create">
                       <Create />

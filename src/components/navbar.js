@@ -4,7 +4,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"></link>
 const navigation = [
-  { name: 'Home', href: './', current: false },
+  { name: 'Home', href: './', current: false},
   { name: 'Setting', href: './', current: false },
   { name: 'Contact', href: './', current: false },
   // { name: 'Add Blog', href: './create', current: false },
@@ -18,7 +18,7 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" >
+    <Disclosure as="nav"  >
     {({ open }) => (
       <>
         <div className="max-w-7xl mx-auto px-2 py-2 tablet:px-6 laptop:px-8 ">
@@ -44,19 +44,7 @@ export default function Example() {
             </div>
           
             <div className="flex-1 flex items-center justify-center tablet:items-stretch tablet:justify-start">
-              <div className="flex-shrink-0 flex items-center">
-                <img
-                  className="block laptop:hidden h-11 w-auto"
-                  src={require('./photo/logo1.png')}
-                  // src="./assets/logo.jpg'"
-                  alt="Workflow"
-                />
-                {/* <img
-                  className="hidden tablet:block h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                  alt="Workflow"
-                /> */}
-              </div>
+             
               <div className="hidden tablet:block tablet:ml-6">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
@@ -78,8 +66,8 @@ export default function Example() {
            
               <span class="w-screen tablet:w-1/3  h-10 bg-gray-200 cursor-pointer border border-gray-300 text-sm rounded-full flex">
                 <input type="search" name="serch" placeholder="Search"
-                  class="flex-grow px-4 rounded-l-full rounded-r-full text-sm focus:outline-none" />
-                <i class="fas fa-search m-3 mr-5 text-lg text-gray-700 w-4 h-4">
+                  class="flex-grow px-12 rounded-l-full rounded-r-full text-sm focus:outline-none" />
+                <i class="fas fa-search m-3 mr-5 text-lg text-gray-700  w-4 h-4">
                 </i>
               </span> 
            
