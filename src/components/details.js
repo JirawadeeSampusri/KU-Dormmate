@@ -1,6 +1,4 @@
 
-
-
 const Details = () => {
     return(
       
@@ -8,7 +6,7 @@ const Details = () => {
    
         <div class="bg-gray-50">
           <div class="pt-6">
-            <nav aria-label="Breadcrumb">
+            {/* <nav aria-label="Breadcrumb">
               <ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 laptop:max-w-7xl laptop:px-8">
                 <li>
                   <div class="flex items-center">
@@ -32,7 +30,7 @@ const Details = () => {
                   <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"> Basic Tee 6-Pack </a>
                 </li>
               </ol>
-            </nav>
+            </nav> */}
         
             {/* <!-- Image gallery --> */}
             <div class="mt-6 max-w-2xl mx-auto sm:px-6 laptop:max-w-7xl laptop:px-8 laptop:grid laptop:grid-cols-3 laptop:gap-x-8">
@@ -61,7 +59,7 @@ const Details = () => {
               {/* <!-- Options --> */}
               <div class="mt-4 laptop:mt-0 laptop:row-span-3">
                 <h2 class="sr-only">Product information</h2>
-                <p class="text-3xl text-gray-900">$192</p>
+                <p class="text-3xl text-gray-900">6000 Baht</p>
         
                 {/* <!-- Reviews --> */}
                 <div class="mt-6">

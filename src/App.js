@@ -10,6 +10,9 @@ import Footer from './components/footer';
 import Login from './login';
 import Register from './register';
 import Details from './components/details';
+import Profile_Owner from './components/profile_owner';
+import Profile_Renter from './components/profile_renter';
+
 
 //sfc
 
@@ -39,6 +42,12 @@ function App() {
                     </Route>
                     <Route path="/details" component={Details} >
                       <Details />
+                    </Route>
+                    <Route path="/profile_owner">
+                      <Profile_Owner />
+                    </Route>
+                    <Route path="/profile_renter">
+                      <Profile_Renter/>
                     </Route>
                     <Route path="/create">
                       <Create />
