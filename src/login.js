@@ -3,18 +3,6 @@ import getFirebase from "./firebase";
 import useInput from "./useInput";
 import { getAuth, signInWithEmailAndPassword, FacebookAuthProvider, signInWithPopup, GoogleAuthProvider, signInWithRedirect} from "firebase/auth";
 
-// function FacebookLogin() {
-//     const firebaseInstance = getFirebase();
-//     const auth = getAuth(firebaseInstance);
-//     const provider = new FacebookAuthProvider(firebaseInstance);
-//     signInWithPopup(auth, provider).then(function(result) {
-//         console.log(result)
-//         }).catch(function(error){
-//         console.log(error.code)
-//         console.log(error.message)
-//         })
-//     }
-
 const Login = () => {
     const firebaseInstance = getFirebase();
     const email = useInput("");
