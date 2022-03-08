@@ -1,13 +1,16 @@
 
+import CustomizedDialogs from './dialog';
 const Profile_Owner = () => {
     return(
+         
         <div class="w-full relative mt-4 shadow-2xl rounded my-24 overflow-hidden">
         <div class="top h-64 w-full bg-zinc-800 overflow-hidden relative" >
           <img src={require('./photo/bg3.png')}  alt="" class="bg w-full h-full object-cover object-center absolute z-0" /> 
           <div class="flex flex-col justify-center items-center relative h-full bg-black bg-opacity-50 text-white">
             <img src={require('./photo/image1.jpeg')} class="h-24 w-24 object-cover rounded-full" />
-            <h1 class="text-2xl font-semibold">ABC Condominium</h1>
-            <h4 class="text-sm font-semibold">Joined Since 21 November 2021</h4>
+            <h1 class="text-xl mt-2 font-semibold">ABC Condominium</h1>
+            <h4 class="text-sm mb-6 font-semibold">Joined Since 21 November 2021</h4>
+            < CustomizedDialogs />
           </div>
         </div>
         <div class="grid grid-cols-12 bg-white laptop:p-14 ">
@@ -16,9 +19,10 @@ const Profile_Owner = () => {
       
             <a href="#" class="text-sm p-2 bg-teal-600 text-white text-center rounded font-bold">Basic Information</a>
       
-            <a href="#" class="text-sm p-2 bg-slate-300 text-center rounded font-semibold hover:bg-teal-600 hover:text-gray-200">Another Information</a>
+            <a href="#" class="text-sm p-2 bg-slate-300 text-center rounded font-semibold hover:bg-teal-600 hover:text-gray-200">Posted</a>
       
-            <button href="#" class="text-sm p-2 bg-rose-600 text-center rounded font-semibold hover:bg-red-600 hover:text-gray-200">Logout</button>
+            <a href="#" class="text-sm p-2 bg-rose-600 text-center rounded font-semibold hover:bg-red-600 hover:text-gray-200">Logout</a>
+
             
       
           </div>

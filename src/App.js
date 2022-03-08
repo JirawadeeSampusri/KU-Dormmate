@@ -12,7 +12,8 @@ import Register from './register';
 import Details from './components/details';
 import Profile_Owner from './components/profile_owner';
 import Profile_Renter from './components/profile_renter';
-
+import Dialog from '@mui/material/Dialog';
+import CustomizedDialogs from './components/dialog';
 
 //sfc
 
@@ -43,11 +44,15 @@ function App() {
                     <Route path="/details" component={Details} >
                       <Details />
                     </Route>
+                   
                     <Route path="/profile_owner">
+                    {/* <CustomizedDialogs /> */}
                       <Profile_Owner />
+                      
                     </Route>
                     <Route path="/profile_renter">
                       <Profile_Renter/>
+                     
                     </Route>
                     <Route path="/create">
                       <Create />
