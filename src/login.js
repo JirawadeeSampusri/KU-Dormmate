@@ -17,6 +17,7 @@ const Login = () => {
           const user = signInWithEmailAndPassword(auth, email.value, password.value);
           console.log("user", user);
           alert("Welcome back!");
+          window.location.replace("/")
         }
       } catch (error) {
         console.log("error", error);
@@ -34,12 +35,14 @@ const Login = () => {
                 const accessToken = credential.accessToken;
                 console.log(user)
                 console.log(accessToken)
+                window.location.replace("/")
                 // ...
             })
             .catch((error) => {
               // Handle Errors here.
               if (error.code === 'auth/popup-blocked') {
                 signInWithRedirect(auth, facebookProvider);
+                window.location.replace("/")
               }
               console.log(error.code, error.message);
               // ...
@@ -58,12 +61,14 @@ const Login = () => {
                 const accessToken = credential.accessToken;
                 console.log(user)
                 console.log(accessToken)
+                window.location.replace("/")
                 // ...
             })
             .catch((error) => {
               // Handle Errors here.
               if (error.code === 'auth/popup-blocked') {
                 signInWithRedirect(auth, googleProvider);
+                window.location.replace("/")
               }
               console.log(error.code, error.message);
               // ...
