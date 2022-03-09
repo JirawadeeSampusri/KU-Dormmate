@@ -1,5 +1,6 @@
 
 import CustomizedDialogs from './dialog';
+import ScrollDialog from'./dialog';
 const Profile_Owner = () => {
     return(
          
@@ -10,7 +11,8 @@ const Profile_Owner = () => {
             <img src={require('./photo/image1.jpeg')} class="h-24 w-24 object-cover rounded-full" />
             <h1 class="text-xl mt-2 font-semibold">ABC Condominium</h1>
             <h4 class="text-sm mb-6 font-semibold">Joined Since 21 November 2021</h4>
-            < CustomizedDialogs />
+            {/* < CustomizedDialogs /> */}
+            < ScrollDialog />
           </div>
         </div>
         <div class="grid grid-cols-12 bg-white laptop:p-14 ">

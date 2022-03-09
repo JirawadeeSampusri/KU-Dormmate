@@ -2,6 +2,7 @@
 import BlogList from "./bloglist";
 import useFetch from "../useFetch";
 import './landing.css';
+import weather from "./weather";
 
 const breakPoints= [
   { width:1, itemToShow: 1},
@@ -13,175 +14,196 @@ const breakPoints= [
 const Landing = () => {
 
     return ( 
+      
         
       <div class=" 2xl:mx-auto 2xl:container mx-4  ">
 
          
         <div role="main" class="flex flex-col items-center justify-center mb-6 ">
-              <div className="flex-shrink-0 flex items-center">
-                            <img
-                              className="block laptop:hidden h-11 w-auto"
-                              src={require('./photo/logo1.png')}
-                              // src="./assets/logo.jpg'"
-                              alt="Workflow"
-                            />
-                            {/* <img
-                              className="hidden tablet:block h-8 w-auto"
-                              src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                              alt="Workflow"
-                            /> */}
-                          </div>
+          <div className="flex-shrink-0 flex items-center">
+              <img
+                className="block laptop:hidden h-11 w-auto"
+                src={require('./photo/logo1.png')}
+                // src="./assets/logo.jpg'"
+                alt="Workflow"
+              />
               
-                {/* <h1 class="text-4xl font-semibold leading-9 text-center text-teal-600">Recently Updated</h1>
-                <p class="text-base leading-normal text-center  mt-4 laptop:w-1/2 tablet:w-10/12 w-11/12">If you're looking for dormitories around Kasetsart University, you've come to the right place. Best luck for your new journey !</p> */}
-              </div>
+            </div>
+        </div>
         
+
+       
+
         <div class="top h-64 w-full bg-zinc-800   overflow-hidden relative" >
+
           
           <img src={require('./photo/bg3.png')}  alt="" class="bg w-full h-full object-cover object-center absolute z-0" /> 
+         
           <div class="flex flex-col  justify-center items-center relative h-full bg-black bg-opacity-50 text-white">
             <h4 class="text-sm hidden tablet:block ">If you're looking for new home around Kasetsart University, </h4>
             <h4 class="text-sm hidden tablet:block">you've come to the right place. Best luck for your new journey !</h4>
             <h4 class="text-sm block laptop:hidden">The Right Place for your New Journey !</h4>
-            <h1 class="text-2xl font-semibold mt-8">Join Now</h1>
+            <h1 class="text-2xl font-semibold mt-4">Join Now</h1>
+            
+            <div class="card  px-6 rounded-xl flex flex-col">
+          
+            <div class="w-full mt-2 ml-8 laptop:mr-8">
+                
+                <div class="inline-block mr-4 mt-2 tablet:ml-4  ">
+                    <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-9 rounded-md bg-gradient-to-r from-gray-400 to-gray-600 transform hover:scale-110">Register as an owner</button>
+                </div>
+                <div class="inline-block mr-2 mt-2">
+                    <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-10 rounded-md bg-gradient-to-r from-teal-400  transform hover:scale-110">Register as a renter</button>
+                </div>
+               
+            </div>
+        </div>
             
           </div>
         </div>
         
-        <div class="flex justify-center items-center">
-      
-          
-          <div class="2xl:mx-auto 2xl:container laptop:px-20   tablet:px-6  px-4 w-96 tablet:w-auto">
-            
-            <div class="laptop:flex items-stretch tablet:mt-12 mt-8">
-              <div class="laptop:w-1/2">
-                <div class="tablet:flex items-center justify-between laptop:gap-x-8 gap-x-6">
-                  <div class="tablet:w-1/2 relative">
-                    <div>
-                      <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                      <div class="absolute bottom-0 left-0 p-6">
-                        <h2 class="text-xl font-semibold 5 text-white">Near Gate 1</h2>
-                        <p class="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-                        <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                          <p class="pr-2 text-sm font-medium leading-none">All Details</p>
-                          <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                          class="w-full" alt="chair" 
-                          src={require('./photo/image2.jpeg')}
-                          
-                          />
-                  
-                  </div>
-                  <div class="tablet:w-1/2 tablet:mt-0 mt-4 relative">
-                    <div>
-                      <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                      <div class="absolute bottom-0 left-0 p-6">
-                        <h2 class="text-xl font-semibold 5 text-white">Near Gate 2</h2>
-                        <p class="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-                        <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                          <p class="pr-2 text-sm font-medium leading-none">All Details</p>
-                          <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                    <img
-                          class="w-full" alt="chair" 
-                          src={require('./photo/image1.jpeg')}
-                          
-                          />
-                  
-                  </div>
-                </div>
-                <div class="relative">
-                  <div>
-                    <p class="tablet:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                    <div class="absolute bottom-0 left-0 tablet:p-10 p-6">
-                      <h2 class="text-xl font-semibold 5 text-white">Near Gate 3</h2>
-                      <p class="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-                      <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                        <p class="pr-2 text-sm font-medium leading-none">All Details</p>
-                        <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
+        <div class="relative pt-12 bg-blueGray-50">
 
-                  {/* <img class="w-full mt-4 tablet:hidden" src="https://i.ibb.co/6XYbN7f/Rectangle-29.png" alt="sitting place" /> */}
-                  <img src="https://i.ibb.co/Ms4qyXp/img-3.png" alt="sitting place" class="w-full mt-8 tablet:mt-6 hidden tablet:block" />
-                  <img class="w-full mt-4 tablet:hidden" src="https://i.ibb.co/6XYbN7f/Rectangle-29.png" alt="sitting place" />
+        {/* Information */}
+      
+
+        <div class=" flex flex-wrap pb-12  ">
+          <div class="w-full tablet:w-4/12 ml-auto mr-auto px-4">
+            <img alt="..." class="max-w-full rounded-lg shadow-lg" src={require('./photo/img3.jpeg')}/>
+          </div>
+          <div class="w-full tablet:w-5/12 ml-auto mr-auto px-4">
+            <div class="tablet:pr-2">
+              <div class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-3 mb-6 shadow-lg rounded-full bg-pink-300 ">
+                <i class="fas fa-rocket text-xl"></i>
+              </div>
+              <h3 class="text-3xl font-semibold">A growing company</h3>
+              <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
+                The extension comes with three pre-built pages to help you get
+                
+              </p>
+              <ul class="list-none mt-6">
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i class="fas fa-fingerprint"></i></span>
+                    </div>
+                    <div>
+                      <h4 class="text-blueGray-500">
+                        Gate 1
+                      </h4>
+                    </div>
+                  </div>
+                </li>
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i class="fab fa-html5"></i></span>
+                    </div>
+                    <div>
+                      <h4 class="text-blueGray-500">Gate 2</h4>
+                    </div>
+                  </div>
+                </li>
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i class="far fa-paper-plane"></i></span>
+                    </div>
+                    <div>
+                      <h4 class="text-blueGray-500">Gate 3</h4>
+                    </div>
+                  </div>
+                </li>
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i class="far fa-paper-plane"></i></span>
+                    </div>
+                    <div>
+                      <h4 class="text-blueGray-500">Phaholyothin Gate</h4>
+                    </div>
+                  </div>
+                </li>
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i class="far fa-paper-plane"></i></span>
+                    </div>
+                    <div>
+                      <h4 class="text-blueGray-500">Viphavadi Gate</h4>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="relative items-center justify-center">
+        
+          {/* <!-- All Cards Container --> */}
+          <div class="laptop:flex items-center container mx-auto my-auto">
+
+            {/* <!-- Card 1 --> */}
+            <div class="laptop:m-4 shadow-md hover:shadow-lg hover:bg-gray-100 rounded-lg bg-white my-12 mx-8">
+              {/* <!-- Card Image --> */}
+              <img src="https://picsum.photos/id/29/2106/1404" alt=""class="overflow-hidden"/>
+              {/* <!-- Card Content --> */}
+              <div class="p-4">
+                <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Climb the Mountains</h3>
+                <p class="text-justify">The be might what days revellers, which sought to a nor. Land from to suits his some. Saw him counsel begun mother though but. Ofttimes soils of since mighty pollution.</p>
+                <div class="mt-5">
+                  <a href="" class="hover:bg-gray-700 rounded-full py-2 px-3 font-semibold hover:text-white bg-gray-400 text-gray-100">Read More</a>
                 </div>
               </div>
-              <div class="laptop:w-1/2 laptop:ml-8 laptop:ml-4 laptop:mt-0 tablet:mt-6 mt-4 laptop:flex flex-col justify-between">
-                <div class="relative">
-                  <div>
-                    <p class="tablet:p-10 p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                    <div class="absolute bottom-0 left-0 tablet:p-10 p-6">
-                      <h2 class="text-xl font-semibold 5 text-white">Create Account to get more info!</h2>
-                      <p class="text-base leading-4 text-white mt-2">If you're looking for new home around Kasetsart University,</p>
-                      <p class="text-base leading-4 text-white mt-2">you've come to the right place. Best luck for your new journey</p>
-                    
-                    <div class="sm:border border-white flex-col sm:flex-row flex items-center mt-6 laptop:w-5/12 w-full space-y-4 sm:space-y-0">
-                      {/* <input class="border border-white sm:border-transparent text-base w-full font-medium leading-none text-white p-4 focus:outline-none bg-transparent placeholder-white" placeholder="Email Address" /> */}
-                      <button class="focus:outline-none focus:ring-offset-2 focus:ring w-full sm:w-auto bg-teal-500 py-4 px-6 hover:bg-opacity-75">
-                      <a
-                        href="./login"
-                        
-                      >
-                        Register
-                      </a></button>
-                  
-                  </div>
-                    </div>
-                  </div>
-                  <img src="https://i.ibb.co/6Wfjf2w/img-4.png" alt="sitting place" class="w-full tablet:block hidden" />
-                  <img class="w-full tablet:hidden" src="https://i.ibb.co/dpXStJk/Rectangle-29.png" alt="sitting place" />
+            </div>
+            {/* <!-- Card 1 --> */}
+            <div class="laptop:m-4 shadow-md hover:shadow-lg hover:bg-gray-100 rounded-lg bg-white my-12 mx-8">
+              {/* <!-- Card Image --> */}
+              <img src="https://picsum.photos/id/29/2106/1404" alt=""class="overflow-hidden"/>
+              {/* <!-- Card Content --> */}
+              <div class="p-4">
+                <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Climb the Mountains</h3>
+                <p class="text-justify">The be might what days revellers, which sought to a nor. Land from to suits his some. Saw him counsel begun mother though but. Ofttimes soils of since mighty pollution.</p>
+                <div class="mt-5">
+                  <a href="" class="hover:bg-gray-700 rounded-full py-2 px-3 font-semibold hover:text-white bg-gray-400 text-gray-100">Read More</a>
                 </div>
-                <div class="tablet:flex items-center justify-between laptop:gap-x-8 gap-x-6 tablet:mt-6 mt-4">
-                  <div class="relative w-full">
-                    <div>
-                      <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                      <div class="absolute bottom-0 left-0 p-6">
-                        <h2 class="text-xl font-semibold 5 text-white">Near Viphavadi Gate </h2>
-                        <p class="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-                        <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                          <p class="pr-2 text-sm font-medium leading-none">All Details</p>
-                          <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                    <img src="https://i.ibb.co/3yvZBpm/img-5.png" class="w-full" alt="chair" />
-                  </div>
-                  <div class="relative w-full tablet:mt-0 mt-4">
-                    <div>
-                      <p class="p-6 text-xs font-medium leading-3 text-white absolute top-0 right-0">12 April 2021</p>
-                      <div class="absolute bottom-0 left-0 p-6">
-                        <h2 class="text-xl font-semibold 5 text-white">Near Phaholyothin Gate</h2>
-                        <p class="text-base leading-4 text-white mt-2">Dive into minimalism</p>
-                        <a href="javascript:void(0)" class="focus:outline-none focus:underline flex items-center mt-4 cursor-pointer text-white hover:text-gray-200 hover:underline">
-                          <p class="pr-2 text-sm font-medium leading-none">All Details</p>
-                          <svg class="fill-stroke" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.75 12.5L10.25 8L5.75 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                    <img src="https://i.ibb.co/gDdnJb5/img-6.png" class="w-full" alt="wall design" />
-                  </div>
+              </div>
+            </div>
+            {/* <!-- Card 2 --> */}
+            <div class="laptop:m-4 shadow-md hover:shadow-lg hover:bg-gray-100 rounded-lg bg-white my-12 mx-8">
+              {/* <!-- Card Image --> */}
+              <img src="https://picsum.photos/id/247/2106/1404" alt=""class="overflow-hidden"/>
+              {/* <!-- Card Content --> */}
+              <div class="p-4">
+                <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Explore the Desert</h3>
+                <p class="text-justify">Rapping wind chamber have was has, is all of thy stood chamber his bore. Nameless or as door tapping both thy grew lenore. We my still respiterespite lie, with lordly.</p>
+                <div class="mt-5">
+                  <a href="" class="hover:bg-gray-700 rounded-full py-2 px-3 font-semibold hover:text-white bg-gray-400 text-gray-100">Read More</a>
+                </div>
+              </div>
+            </div>
+            {/* <!-- Card 3 --> */}
+            <div class="laptop:m-4 shadow-md hover:shadow-lg hover:bg-gray-100 rounded-lg bg-white my-12 mx-8">
+              {/* <!-- Card Image --> */}
+              <img src="https://picsum.photos/id/342/2106/1404" alt=""class="overflow-hidden" />
+              {/* <!-- Card Content --> */}
+              <div class="p-4">
+                <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Tour the City</h3>
+                <p class="text-justify">Upon but that objects tis sore would what. Who formed in coffined heartless shades, there mine was heart vast flaunting he low relief uncouth, dear and and but suffice ofttimes.</p>
+                <div class="mt-5">
+                  <a href="" class="hover:bg-gray-700 rounded-full py-2 px-3 font-semibold hover:text-white bg-gray-400 text-gray-100">Read More</a>
                 </div>
               </div>
             </div>
           </div>
+          {/* <!-- Footer --> */}
+          <div class="mt-10 bottom-0 text-center">
+            <h4 class="text-sm font-semibold text-gray-600 "> &COPY; 2021 CORE-UI</h4>
+          </div>
         </div>
+        </div>
+
+
 
       </div>
         
