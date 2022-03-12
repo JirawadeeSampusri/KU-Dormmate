@@ -50,10 +50,20 @@ const Landing = () => {
             <div class="w-full mt-2 ml-8 laptop:mr-8">
                 
                 <div class="inline-block mr-4 mt-2 tablet:ml-4  ">
+                <a
+                          href="./register_owner"
+                       
+                        >
                     <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-9 rounded-md bg-gradient-to-r from-gray-400 to-gray-600 transform hover:scale-110">Register as an owner</button>
+                    </a>
                 </div>
                 <div class="inline-block mr-2 mt-2">
+                <a
+                          href="./register_renter"
+                       
+                        >
                     <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-10 rounded-md bg-gradient-to-r from-teal-400  transform hover:scale-110">Register as a renter</button>
+                  </a>
                 </div>
                
             </div>

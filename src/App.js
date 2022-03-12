@@ -8,7 +8,9 @@ import Landing from './components/landing';
 import Card from './components/card';
 import Footer from './components/footer';
 import Login from './login';
-import Register from './register';
+
+import Register_Renter from './register_renter';
+import Register_Owner from './register_owner';
 import Details from './components/details';
 import Profile_Owner from './components/profile_owner';
 import Profile_Renter from './components/profile_renter';
@@ -31,7 +33,8 @@ function App() {
 
             <Switch>
               <Route exact path="/login" component={Login} />
-              <Route exact path="/register" component={Register} />
+              <Route exact path="/register_renter" component={Register_Renter} />
+              <Route exact path="/register_owner" component={Register_Owner} />
               <div>
                 <Navbar />
                 <div className="content ">

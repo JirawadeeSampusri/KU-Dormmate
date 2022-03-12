@@ -1,4 +1,5 @@
-
+import ScrollDialog_renter from './dialog_renter';
+import ScrollDialog_findmatch from './findMatch';
 const Profile_Renter = () => {
     return(
         <div class="w-full relative mt-4 shadow-2xl rounded my-24 overflow-hidden">
@@ -7,7 +8,18 @@ const Profile_Renter = () => {
           <div class="flex flex-col justify-center items-center relative h-full bg-black bg-opacity-50 text-white">
                 <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="h-24 w-24 object-cover rounded-full" />
             <h1 class="text-2xl font-semibold">Antonia Howell</h1>
-            <h4 class="text-sm font-semibold">Joined Since 21 November 2021</h4>
+            <h4 class="text-sm mb-4  font-semibold">Joined Since 21 November 2021</h4>
+            <div class="flex">
+            <div class="flex-grow ">
+                        < ScrollDialog_renter />
+                        </div>
+                        <div class="flex-grow ml-2 ">
+                        < ScrollDialog_findmatch />
+                        </div>
+                    </div>
+           
+          
+            
           </div>
         </div>
         <div class="grid grid-cols-12 bg-white laptop:p-14 ">
@@ -38,10 +50,6 @@ const Profile_Renter = () => {
                   <label class="text-xl ">Email</label>
                   <input type="text" value="antoniaph@gmail.com" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" />
                 </div>
-        
-
-              
-               
               </form>
               
             </div>
