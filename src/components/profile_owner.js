@@ -1,6 +1,8 @@
 
 import CustomizedDialogs from './dialog';
 import ScrollDialog from'./dialog';
+
+
 const Profile_Owner = () => {
     return(
          
@@ -40,19 +42,19 @@ const Profile_Owner = () => {
       
                 <div class="form-item">
                   <label class="text-xl ">Name</label>
-                  <input type="text" value="Antonia P. Howell" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"  />
+                  <input type="text" placeholder="Antonia P. Howell" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"  />
                 </div>
       
                 <div class="flex flex-col space-y-4 tablet:space-y-0 tablet:flex-row tablet:space-x-4">
       
                   <div class="form-item w-full">
                     <label class="text-xl ">Username</label>
-                    <input type="text" value="antonia" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " />
+                    <input type="text" placeholder="antonia" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " />
                   </div>
       
                   <div class="form-item w-full">
                     <label class="text-xl ">Email</label>
-                    <input type="text" value="antoniaph@gmail.com" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "  />
+                    <input type="text" placeholder="antoniaph@gmail.com" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "  />
                   </div>
                 </div>
       
@@ -63,7 +65,7 @@ const Profile_Owner = () => {
       
                 <div class="form-item w-full">
                   <label class="text-xl ">Contact / Location</label>
-                  <textarea cols="30" rows="5" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem natus nobis odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, eveniet fugiat? Explicabo assumenda dignissimos quisquam perspiciatis corporis sint commodi cumque rem tempora!</textarea>
+                  <textarea cols="30" rows="5"  placeholder="details" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " ></textarea>
                 </div>
       
                 <div>
@@ -73,15 +75,15 @@ const Profile_Owner = () => {
       
                 <div class="form-item">
                   <label class="text-xl ">Instagram</label>
-                  <input type="text" value="https://instagram.com/" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "  />
+                  <input type="text" placeholder="https://instagram.com/" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "  />
                 </div>
                 <div class="form-item">
                   <label class="text-xl ">Facebook</label>
-                  <input type="text" value="https://facebook.com/" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " />
+                  <input type="text" placeholder="https://facebook.com/" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 " />
                 </div>
                 <div class="form-item">
                   <label class="text-xl ">Twitter</label>
-                  <input type="text" value="https://twitter.com/" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200  "  />
+                  <input type="text" placeholder="https://twitter.com/" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200  "  />
                 </div>
       
               </form>
@@ -98,3 +100,4 @@ const Profile_Owner = () => {
     }
 
 export default Profile_Owner;
+
