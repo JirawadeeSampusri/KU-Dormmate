@@ -21,6 +21,7 @@ const Login = () => {
         console.log("error", error);
       }
     };
+    
     return(
         <div class="h-full bg-gradient-to-tl from-teal-400 to-teal-900 w-full py-16 px-4">
         {/* <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ ---> */}
