@@ -16,6 +16,8 @@ import Profile_Owner from './components/profile_owner';
 import Profile_Renter from './components/profile_renter';
 import Dialog from '@mui/material/Dialog';
 import CustomizedDialogs from './components/dialog';
+import Landing_Owner from './components/landing_owner';
+import Landing_Renter from './components/landing_renter';
 
 //sfc
 
@@ -42,12 +44,20 @@ function App() {
                   <Switch>
                     <Route exact path="/">
                       <Landing />
-                      <Card />
+                      
                     </Route>
                     <Route path="/details" component={Details} >
                       <Details />
                     </Route>
-                   
+                    <Route exact path="/landing_owner">
+                      <Landing_Owner />
+                    
+                    </Route>
+                    <Route exact path="/landing_renter">
+                      <Landing_Renter />
+                    
+                    </Route>
+                  
                     <Route path="/profile_owner">
                     {/* <CustomizedDialogs /> */}
                       <Profile_Owner />
