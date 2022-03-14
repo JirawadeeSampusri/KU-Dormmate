@@ -111,7 +111,7 @@ const Register_Owner = () => {
                         </div>
                        
                         
-                        <div class="mt-6  w-full">
+                        {/* <div class="mt-6  w-full">
                             <label for="pass" class="text-sm font-medium leading-none text-gray-800">
                                 Confirm Password
                             </label>
@@ -124,7 +124,7 @@ const Register_Owner = () => {
                                     
                             </div>
                            </div>
-                        </div>
+                        </div> */}
                         <div class="mt-8">
                             <button class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-cyan-600 border rounded hover:bg-cyan-500 py-4 w-full">Regis</button>
                         </div>

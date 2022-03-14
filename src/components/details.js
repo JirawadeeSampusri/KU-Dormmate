@@ -1,11 +1,22 @@
 
+// import AutoRotatingCarouselModal from card_details;
+
 const Details = () => {
+
+  
     return(
       
  
    
         <div class="bg-gray-50">
+
           <div class="pt-6">
+
+          
+
+
+
+           {/* <AutoRotatingCarouselModal /> */}
             {/* <nav aria-label="Breadcrumb">
               <ol role="list" class="max-w-2xl mx-auto px-4 flex items-center space-x-2 sm:px-6 laptop:max-w-7xl laptop:px-8">
                 <li>
@@ -33,22 +44,6 @@ const Details = () => {
             </nav> */}
         
             {/* <!-- Image gallery --> */}
-            <div class="mt-6 max-w-2xl mx-auto sm:px-6 laptop:max-w-7xl laptop:px-8 laptop:grid laptop:grid-cols-3 laptop:gap-x-8">
-              <div class="hidden aspect-w-3 aspect-h-4 rounded-lg overflow-hidden laptop:block">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg" alt="Two each of gray, white, and black shirts laying flat." class="w-full h-full object-center object-cover" />
-              </div>
-              <div class="hidden laptop:grid laptop:grid-cols-1 laptop:gap-y-8">
-                <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-                  <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg" alt="Model wearing plain black basic tee." class="w-full h-full object-center object-cover" />
-                </div>
-                <div class="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
-                  <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg" alt="Model wearing plain gray basic tee." class="w-full h-full object-center object-cover" />
-                </div>
-              </div>
-              <div class="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden laptop:aspect-w-3 laptop:aspect-h-4">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg" alt="Model wearing plain white basic tee." class="w-full h-full object-center object-cover" />
-              </div>
-            </div>
         
             {/* <!-- Product info --> */}
             <div class="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 laptop:max-w-7xl laptop:pt-16 laptop:pb-24 laptop:px-8 laptop:grid laptop:grid-cols-3 laptop:grid-rows-[auto,auto,1fr] laptop:gap-x-8">
