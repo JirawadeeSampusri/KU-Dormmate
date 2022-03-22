@@ -3,34 +3,68 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { styled } from '@mui/material/styles';
 import Stack from '@mui/material/Stack';
 import Checkbox from '@mui/material/Checkbox';
 import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Chip from '@mui/material/Chip';
-
+import { collection,addDoc } from "firebase/firestore";
+import {db, auth} from '../firebase';
 
 
 
 export default function ScrollDialog() {
+  const roomCollection = collection(db, 'room')
+  const user = auth.currentUser
+  console.log(user);
+  
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
+
+  // const [articles,setArticles] = useState([])
+
+  const [room, setRoom] =  React.useState('');
+  const [price, setPrice] =  React.useState('');
+  const [address, setAddress] =  React.useState('');
+  const [description, setDescription] =  React.useState('');
+  const [isGate1, setIsGate1] =  React.useState(false);
+  const [isGate2, setIsGate2] =  React.useState(false);
+  const [isGate3, setIsGate3] =  React.useState(false);
+  const [isGateViphavadi, setIsViphavadi] =  React.useState(false);
+  const [isGatePhaholyothin, setIsPhaholyothin] =  React.useState(false);
+
 
   const handleClickOpen = (scrollType) => () => {
     setOpen(true);
     setScroll(scrollType);
   };
 
+
   const handleClose = () => {
     setOpen(false);
+  };
+
+ 
+  
+  const handleSubmit = async () => {
+    let data = {
+      'room': room,
+      'price': price,
+      'address': address,
+      'description': description,
+      'gate1':isGate1,
+      'gate2':isGate2,
+      'gate3':isGate3,
+      'gateViphavadi':isGateViphavadi,
+      'gatePhaholyothin':isGatePhaholyothin,
+      'user': {
+        'email': user.email,
+        // 'name': user.displayName,
+      }
+    }
+    console.log(data);
+    let response = await addDoc(roomCollection, data)  
+    console.log(response);
   };
 
   const Input = styled('input')({
@@ -61,14 +95,7 @@ export default function ScrollDialog() {
       },
     };
 
-    const names = [
-      'Gate 1',
-      'Gate 2',
-      'Gate 3',
-      'Vibhavadi Gate',
-      'Phaholyothin Gate',
-    ];
-
+   
     function getStyles(name, personName, theme) {
       return {
         fontWeight:
@@ -110,7 +137,14 @@ export default function ScrollDialog() {
         <div class="px-5 pb-5">
                    {/* room */}
                   <label for="title" class="text-lx font-serif">Room :</label>
-                  <input  class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
+                  <input  
+                  id="room" type="room" 
+                  onChange={function(event){
+                    setRoom(event.target.value)
+                  }} value={room}
+                    class="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white  focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
+                  />
+                  
                  
                    {/* price */}
                    <div class="pt-3">
@@ -118,10 +152,17 @@ export default function ScrollDialog() {
                    
                   <div class="flex">
                       <div class="flex-grow w-1/4 pr-2">
-                        <input placeholder="Amount" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
+                        <input 
+                        id="price" type="price"
+                        onChange={function(event){
+                          setPrice(event.target.value)
+                        }} value={price}
+
+                        placeholder="Amount" 
+                        class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
                         </div>
                         <div class="flex-grow w-1/4 ">
-                        <input placeholder="BHT" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current " disabled/>
+                        <input placeholder="BHT" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg  focus:border-blueGray-500 focus:bg-white  focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current " disabled/>
                         </div>
                     </div>
                   
@@ -130,18 +171,25 @@ export default function ScrollDialog() {
                    {/* address */}
                   <div class="items-center pt-3">
                     <label for="address" class="text-lx  font-serif">Address :</label>
-                    <input  placeholder="Street and house number"  class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400" /> 
-                    <div class="flex">
+                    <textarea
+                     id="address" type="address"
+                     onChange={function(event){
+                       setAddress(event.target.value)
+                     }} value={address}
+
+                    rows="3" placeholder="Street, house number, area, sub-area and postcode"  class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white  focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
+                   
+                    {/* <div class="flex">
                       <div class="flex-grow w-1/4 pr-2">
                         <input placeholder="Sub-area" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
                         </div>
                         <div class="flex-grow w-1/4 ">
                         <input placeholder="Area" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
                         </div>
-                    </div>
+                    </div> */}
                   </div>
 
-                   {/* default address */}
+                   {/* default address
                   <div class="flex">
                     <div class="flex-grow w-1/4 pr-2">
                       <input placeholder="Bangkok, Thailand" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   rounded-lg border-blueGray-500    " disabled/>
@@ -149,128 +197,100 @@ export default function ScrollDialog() {
                       <div class="flex-grow w-1/4 ">
                       <input placeholder="Postcode" class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
                       </div>
-                  </div>
+                  </div> */}
 
-                    {/* save default address */}
-                  <div class="flex items-center pt-3">
-                      <input type="checkbox" class="w-4 h-4 text-black bg-gray-300 border-none rounded-md focus:ring-transparent"/><label for="safeAdress" class="block ml-2 text-sm text-gray-900">
-                    Save as default address</label>
-                  </div>
-
+                
+                
                    {/* Specific address */}
                   <div class="items-center pt-3">
-                  <label for="address" class="text-lx  font-serif">Specific Address :</label>
-                  <FormControl sx={{ m: 1, width: 200 }} >
-                    <InputLabel id="demo-multiple-chip-label">Gate</InputLabel>
-                    <Select
-                      labelId="demo-multiple-chip-label"
-                      id="demo-multiple-chip"
-                      multiple
-                      value={personName}
-                      onChange={handleChange}
-                      input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-                      renderValue={(selected) => (
-                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                          {selected.map((value) => (
-                            <Chip key={value} label={value} />
-                          ))}
-                        </Box>
-                      )}
-                      MenuProps={MenuProps}
-                    >
-                      {names.map((name) => (
-                        <MenuItem
-                          key={name}
-                          value={name}
-                          style={getStyles(name, personName, theme)}
-                        >
-                          {name}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>    
-                  </div>
-                 
-                   {/* room amentities */}
-                  <div class="items-center pt-3">
-                    <label for="address" class="text-lx  font-serif">Room Amenities : </label>
+                    <label for="address" class="text-lx  font-serif">Specific address : </label>
                        <div>
-                          <label for="title" class="text-lx font-quicksand">Air Condition:</label>
-                          <Checkbox {...label}  color="success" />
-                          <label for="title" class="text-lx font-quicksand">Fan:</label>
-                          <Checkbox {...label}  color="success" />
+                          <label for="title" class="text-lx font-quicksand">Gate 1</label>
+                          <Checkbox {...label} 
+                             checked={isGate1}
+                             value={isGate1}
+                             onChange={(event) => setIsGate1(event.target.checked)}
+                            type="checkbox" color="success" 
+                            />
+                          <label for="title" class="text-lx font-quicksand">Gate 2</label>
+                          <Checkbox {...label} 
+                             checked={isGate2}
+                             value={isGate2}
+                             onChange={(event) => setIsGate2(event.target.checked)}
+                            type="checkbox" color="success" 
+                            />
+                          <label for="title" class="text-lx font-quicksand">Gate 3</label>
+                          <Checkbox {...label} 
+                           checked={isGate3}
+                           value={isGate3}
+                           onChange={(event) => setIsGate3(event.target.checked)} 
+                            type="checkbox"color="success" 
+                          />
+                        
                       </div>
                       <div>
                          
-                          <label for="title" class="text-lx font-quicksand">TV:</label>
-                          <Checkbox  {...label}  color="success" />
-                          <label for="title" class="text-lx font-quicksand">Water Heater:</label>
-                          <Checkbox {...label}  color="success" />
+                          <label for="title" class="text-lx font-quicksand">Viphavadi Gate</label>
+                          <Checkbox  {...label} 
+                           checked={isGateViphavadi}
+                           value={isGateViphavadi}
+                           onChange={(event) => setIsViphavadi(event.target.checked)}
+                            type="checkbox" color="success" 
+                            />
+                          <label for="title" class="text-lx font-quicksand">Phaholyothin Gate</label>
+                          <Checkbox {...label}  
+                           checked={isGatePhaholyothin}
+                           value={isGatePhaholyothin}
+                           onChange={(event) => setIsPhaholyothin(event.target.checked)}
+                            type="checkbox" color="success" 
+                          />
+                          
                       </div>
-                      <div>
-                        
-                              <label for="title" class="text-lx font-quicksand">Washing Machine:</label>
-                              <Checkbox {...label}  color="success" />  
-                      </div>
-                      <div>
-                          <label for="title" class="text-lx font-quicksand">Smoking:</label>
-                          <Checkbox  {...label}  color="success" />
-                          <label for="title" class="text-lx font-quicksand">Pet:</label>
-                          <Checkbox {...label}  color="success" />  
-                      </div>
+                    
+                     
                     
                   </div>
 
-                  {/* building amentities */}
-                  <div class="items-center pt-3">
-                    <label for="address" class="text-lx  font-serif">Building Amenities : </label>
-                       <div>
-                          <label for="title" class="text-lx font-quicksand">Parking:</label>
-                          <Checkbox {...label}  color="success" />
-                          <label for="title" class="text-lx font-quicksand">Elevator:</label>
-                          <Checkbox {...label}  color="success" />
-                      </div>
-                      <div>
-                         
-                          <label for="title" class="text-lx font-quicksand">Pool:</label>
-                          <Checkbox  {...label}  color="success" />
-                          <label for="title" class="text-lx font-quicksand">Fitness:</label>
-                          <Checkbox {...label}  color="success" />
-                      </div>
-                      <div>
-                        
-                              <label for="title" class="text-lx font-quicksand">Security keycard:</label>
-                              <Checkbox {...label}  color="success" />  
-                      </div>
-                      <div>
-                          <label for="title" class="text-lx font-quicksand">CCTV:</label>
-                          <Checkbox  {...label}  color="success" />
-                          <label for="title" class="text-lx font-quicksand">Laundry:</label>
-                          <Checkbox {...label}  color="success" />  
-                      </div>
-                    
-                  </div>
-          
+              
                   {/* upload image */}
-                  <Stack  class="pt-2 pb-2 mt-6"direction="row" alignItems="center" spacing={2}>
+                  <Stack  class="pt-2 pb-2 mt-6"  spacing={2}>
+                      <label class="pt-4" htmlFor="contained-button-file">
+                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
+                        <Button variant="contained" component="span">
+                          Upload Image1
+                        </Button>
+                      </label>
                       <label htmlFor="contained-button-file">
                         <Input accept="image/*" id="contained-button-file" multiple type="file" />
                         <Button variant="contained" component="span">
-                          Upload Images
+                          Upload Image2
                         </Button>
                       </label>
-                      {/* <label htmlFor="icon-button-file">
-                        <Input accept="image/*" id="icon-button-file" type="file" />
-                        <IconButton color="primary" aria-label="upload picture" component="span">
-                          <PhotoCamera />
-                        </IconButton>
-                      </label> */}
+                      <label htmlFor="contained-button-file">
+                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
+                        <Button variant="contained" component="span">
+                          Upload Image3
+                        </Button>
+                      </label>
+                      <label htmlFor="contained-button-file">
+                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
+                        <Button variant="contained" component="span">
+                          Upload Image4
+                        </Button>
+                      </label>
+                      
+                     
                   </Stack>
 
                   {/* description */}
                   <div class="items-center pt-4">
                       <label for="Description" class="text-lx font-serif">Description:</label>
-                      <textarea rows="5"   class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
+                      <textarea 
+                       id="description" type="description"
+                       onChange={function(event){
+                         setDescription(event.target.value)
+                       }} value={description}
+                      rows="5"   class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
 
                     </div>
                    
@@ -279,7 +299,7 @@ export default function ScrollDialog() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Post</Button>
+          <Button onClick={handleSubmit}>Post</Button>
         </DialogActions>
       </Dialog>
     </div>

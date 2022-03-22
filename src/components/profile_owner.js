@@ -3,7 +3,11 @@ import CustomizedDialogs from './dialog';
 import ScrollDialog from'./dialog';
 
 
+
+
 const Profile_Owner = () => {
+    
+
     return(
          
         <div class="w-full relative mt-4 shadow-2xl rounded my-24 overflow-hidden">

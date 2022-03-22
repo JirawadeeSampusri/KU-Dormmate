@@ -1,0 +1,14 @@
+.head-text {
+    position: relative;
+ }
+.text-on-image {
+    background-color: white;
+    opacity: 0.6;
+   position: absolute;
+  
+   padding:6px;
+  
+   bottom: 82%;
+   
+ }
+ 

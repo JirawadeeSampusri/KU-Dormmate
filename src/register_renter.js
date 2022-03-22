@@ -1,5 +1,5 @@
 import React from "react";
-import getFirebase from "./firebase";
+import {getFirebase} from "./firebase";
 import useInput from "./useInput";
 import { getAuth, createUserWithEmailAndPassword, FacebookAuthProvider, signInWithPopup, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 const Register_Renter = () => {
