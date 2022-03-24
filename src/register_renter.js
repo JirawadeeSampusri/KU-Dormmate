@@ -15,7 +15,7 @@ const Register_Renter = () => {
             const user = createUserWithEmailAndPassword(auth, email.value, password.value);
             console.log("user", user);
             alert(`Welcome`);
-            window.location.replace("/profile_renter")
+            window.location.replace("/login_renter")
         }
         } catch (error) {
         console.log("error", error);
@@ -35,14 +35,14 @@ const Register_Renter = () => {
                 const accessToken = credential.accessToken;
                 console.log(user)
                 console.log(accessToken)
-                window.location.replace("/profile_renter")
+                window.location.replace("/landing_renter")
                 // ...
             })
             .catch((error) => {
               // Handle Errors here.
               if (error.code === 'auth/popup-blocked') {
                 signInWithRedirect(auth, facebookProvider);
-                window.location.replace("/profile_renter")
+                window.location.replace("/")
               }
               console.log(error.code, error.message);
               // ...
@@ -61,21 +61,21 @@ const Register_Renter = () => {
                 const accessToken = credential.accessToken;
                 console.log(user)
                 console.log(accessToken)
-                window.location.replace("/profile_renter")
+                window.location.replace("/landing_renter")
                 // ...
             })
             .catch((error) => {
               // Handle Errors here.
               if (error.code === 'auth/popup-blocked') {
                 signInWithRedirect(auth, googleProvider);
-                window.location.replace("/profile_renter")
+                window.location.replace("/")
               }
               console.log(error.code, error.message);
               // ...
             });
     }
     return(
-        <div class="h-full bg-gradient-to-tl from-zinc-400 to-teal-700 w-full py-16 px-4">
+        <div class="h-full bg-gradient-to-tl from-teal-400 to-teal-900 w-full py-16 px-4">
         {/* <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ ---> */}
 
             <div class="flex flex-col items-center justify-center">

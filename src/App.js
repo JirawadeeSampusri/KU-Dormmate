@@ -7,7 +7,7 @@ import NotFound from './notfound';
 import Landing from './components/landing';
 import Card from './components/card';
 import Footer from './components/footer';
-import Login from './login';
+import Login from './login_owner';
 
 import Register_Renter from './register_renter';
 import Register_Owner from './register_owner';
@@ -18,6 +18,8 @@ import Dialog from '@mui/material/Dialog';
 import CustomizedDialogs from './components/dialog';
 import Landing_Owner from './components/landing_owner';
 import Landing_Renter from './components/landing_renter';
+import Login_Owner from './login_owner';
+import Login_Renter from './login_renter';
 
 //sfc
 
@@ -34,11 +36,12 @@ function App() {
           <Router>
 
             <Switch>
-              <Route exact path="/login" component={Login} />
+              <Route exact path="/login_owner" component={Login_Owner} />
+              <Route exact path="/login_renter" component={Login_Renter} />
               <Route exact path="/register_renter" component={Register_Renter} />
               <Route exact path="/register_owner" component={Register_Owner} />
               <div>
-                <Navbar />
+              
                 <div className="content ">
                   
                   <Switch>

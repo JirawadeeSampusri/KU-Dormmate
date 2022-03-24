@@ -4,6 +4,9 @@ import useFetch from "../useFetch";
 import './landing.css';
 import weather from "./weather";
 import Card from "./card";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from '../components/navbar';
+import Carousel_Renter from "./slider_renter";
 
 const breakPoints= [
   { width:1, itemToShow: 1},
@@ -15,8 +18,12 @@ const breakPoints= [
 const Landing_Renter = () => {
 
     return ( 
+      <div>
+     < Navbar/>
+
       <div class=" 2xl:mx-auto 2xl:container mx-4  ">
 
+       
         <div role="main" class="flex flex-col items-center justify-center mb-6 ">
           <div className="flex-shrink-0 flex items-center">
               <img
@@ -28,18 +35,14 @@ const Landing_Renter = () => {
               
             </div>
         </div>
-        
-
-       
-
-    
-        
-        <div class="relative pt-12 bg-blueGray-50">
+        <div class="relative bg-blueGray-50">
 
         {/* Information */}
-      
 
-        <div class=" flex flex-wrap pb-12  ">
+        
+      < Carousel_Renter />
+
+        {/* <div class=" flex flex-wrap pb-12  ">
           <div class="w-full tablet:w-4/12 ml-auto mr-auto px-4">
             <img alt="..." class="max-w-full rounded-lg shadow-lg" src={require('./photo/img3.jpeg')}/>
           </div>
@@ -109,8 +112,8 @@ const Landing_Renter = () => {
               </ul>
             </div>
           </div>
-        </div>
-        <div class="relative items-center justify-center">
+        </div> */}
+        <div class="relative pt-12 items-center justify-center">
         
           {/* <!-- All Cards Container --> */}
           <div class="laptop:flex items-center container mx-auto my-auto">
@@ -122,7 +125,7 @@ const Landing_Renter = () => {
               {/* <!-- Card Content --> */}
               <div class="p-4">
                 <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Climb the Mountains</h3>
-                <p class="text-justify">The be might what days revellers, which sought to a nor. Land from to suits his some. Saw him counsel begun mother though but. Ofttimes soils of since mighty pollution.</p>
+                <p class="text-justify">The be might what days revellers, which sought to a nor. Land from to suits his some. .</p>
                 <div class="mt-5">
                   <a href="" class="hover:bg-gray-700 rounded-full py-2 px-3 font-semibold hover:text-white bg-gray-400 text-gray-100">Read More</a>
                 </div>
@@ -135,7 +138,7 @@ const Landing_Renter = () => {
               {/* <!-- Card Content --> */}
               <div class="p-4">
                 <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Climb the Mountains</h3>
-                <p class="text-justify">The be might what days revellers, which sought to a nor. Land from to suits his some. Saw him counsel begun mother though but. Ofttimes soils of since mighty pollution.</p>
+                <p class="text-justify">The be might what days revellers, which sought to a nor.Land from to suits his some. </p>
                 <div class="mt-5">
                   <a href="" class="hover:bg-gray-700 rounded-full py-2 px-3 font-semibold hover:text-white bg-gray-400 text-gray-100">Read More</a>
                 </div>
@@ -148,7 +151,7 @@ const Landing_Renter = () => {
               {/* <!-- Card Content --> */}
               <div class="p-4">
                 <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Explore the Desert</h3>
-                <p class="text-justify">Rapping wind chamber have was has, is all of thy stood chamber his bore. Nameless or as door tapping both thy grew lenore. We my still respiterespite lie, with lordly.</p>
+                <p class="text-justify">Rapping wind chamber have was has, is all of thy stood chamber his bore.</p>
                 <div class="mt-5">
                   <a href="" class="hover:bg-gray-700 rounded-full py-2 px-3 font-semibold hover:text-white bg-gray-400 text-gray-100">Read More</a>
                 </div>
@@ -161,7 +164,7 @@ const Landing_Renter = () => {
               {/* <!-- Card Content --> */}
               <div class="p-4">
                 <h3 class="font-medium text-gray-600 text-lg my-2 uppercase">Tour the City</h3>
-                <p class="text-justify">Upon but that objects tis sore would what. Who formed in coffined heartless shades, there mine was heart vast flaunting he low relief uncouth, dear and and but suffice ofttimes.</p>
+                <p class="text-justify">Upon but that objects tis sore would what. Who formed in coffined heartless shades,</p>
                 <div class="mt-5">
                   <a href="" class="hover:bg-gray-700 rounded-full py-2 px-3 font-semibold hover:text-white bg-gray-400 text-gray-100">Read More</a>
                 </div>
@@ -176,6 +179,8 @@ const Landing_Renter = () => {
 
 
       </div>
+      </div>
+    
         
      );     
      

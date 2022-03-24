@@ -9,7 +9,9 @@ import Stack from '@mui/material/Stack';
 import Checkbox from '@mui/material/Checkbox';
 import { useTheme } from '@mui/material/styles';
 import { collection,addDoc } from "firebase/firestore";
-import {db, auth} from '../firebase';
+import {db, auth,storage} from '../firebase';
+import { ref } from "@firebase/storage";
+import { ref as getDownloadURL,storageRef, uploadBytesResumable } from "firebase/storage";
 
 
 
@@ -32,6 +34,15 @@ export default function ScrollDialog() {
   const [isGate3, setIsGate3] =  React.useState(false);
   const [isGateViphavadi, setIsViphavadi] =  React.useState(false);
   const [isGatePhaholyothin, setIsPhaholyothin] =  React.useState(false);
+  
+  const [progress,setProgress] = React.useState(0);
+
+  const formHandler = (e) => {
+    e.preventDefault();
+
+    const file = e.target[0].files[0];
+    uploadFiles(file);
+  };
 
 
   const handleClickOpen = (scrollType) => () => {
@@ -44,9 +55,32 @@ export default function ScrollDialog() {
     setOpen(false);
   };
 
- 
+  
+
+  const uploadFiles = (file) =>{
+    if(!file) return;
+    const storageRef = ref(storage, `/files/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+   
+    uploadTask.on("state_changed", (snapshot) => {
+      const prog = Math.round(
+        (snapshot.bytesTransferred / snapshot.totalBytes) * 100 
+
+    );setProgress(prog);
+
+  },
+  (err) => console.log(err),
+  () => {
+      getDownloadURL(uploadTask.snapshot.ref).then((url) => console.log(url));
+    }
+
+  );
+  };
+
+
   
   const handleSubmit = async () => {
+  
     let data = {
       'room': room,
       'price': price,
@@ -57,14 +91,22 @@ export default function ScrollDialog() {
       'gate3':isGate3,
       'gateViphavadi':isGateViphavadi,
       'gatePhaholyothin':isGatePhaholyothin,
+      'file':{
+        'file':progress,
+      },
       'user': {
         'email': user.email,
         // 'name': user.displayName,
-      }
+      }, 
+
     }
     console.log(data);
     let response = await addDoc(roomCollection, data)  
+    let file = await uploadFiles();
     console.log(response);
+    console.log(file);
+
+
   };
 
   const Input = styled('input')({
@@ -254,13 +296,19 @@ export default function ScrollDialog() {
               
                   {/* upload image */}
                   <Stack  class="pt-2 pb-2 mt-6"  spacing={2}>
-                      <label class="pt-4" htmlFor="contained-button-file">
+
+                    <form onSubmit={formHandler} >
+                        <input type="file" className ="input"/>
+                        <button type='submit'>Upload</button>
+                    </form>
+         
+                      {/* <label class="pt-4" htmlFor="contained-button-file">
                         <Input accept="image/*" id="contained-button-file" multiple type="file" />
                         <Button variant="contained" component="span">
                           Upload Image1
                         </Button>
-                      </label>
-                      <label htmlFor="contained-button-file">
+                      </label> */}
+                      {/* <label htmlFor="contained-button-file">
                         <Input accept="image/*" id="contained-button-file" multiple type="file" />
                         <Button variant="contained" component="span">
                           Upload Image2
@@ -277,10 +325,12 @@ export default function ScrollDialog() {
                         <Button variant="contained" component="span">
                           Upload Image4
                         </Button>
-                      </label>
+                      </label> */}
                       
                      
                   </Stack>
+
+                 
 
                   {/* description */}
                   <div class="items-center pt-4">
@@ -293,7 +343,7 @@ export default function ScrollDialog() {
                       rows="5"   class=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
 
                     </div>
-                   
+                    <h3>Upload {progress} %</h3>
                      
                   </div>
         </DialogContent>

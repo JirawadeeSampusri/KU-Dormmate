@@ -21,14 +21,14 @@ const firebaseConfig = {
 
 // Initialize Firebase
 let app = initializeApp(firebaseConfig);
-
+let a
 export function getFirebase() {
   return app
 }
 
 // export const storage = getStorage();
 export const db = getFirestore();
-export const storage = getStorage()
+export const storage = getStorage(a);
 
 
 export const auth = getAuth();

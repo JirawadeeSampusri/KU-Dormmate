@@ -43,7 +43,7 @@ const Landing = () => {
             <h4 class="text-sm hidden tablet:block ">If you're looking for new home around Kasetsart University, </h4>
             <h4 class="text-sm hidden tablet:block">you've come to the right place. Best luck for your new journey !</h4>
             <h4 class="text-sm block laptop:hidden">The Right Place for your New Journey !</h4>
-            <h1 class="text-2xl font-semibold mt-4">Join Now</h1>
+            <h1 class="text-2xl font-semibold mt-4">Sign In</h1>
             
             <div class="card  px-6 rounded-xl flex flex-col">
           
@@ -51,18 +51,18 @@ const Landing = () => {
                 
                 <div class="inline-block mr-4 mt-2 tablet:ml-4  ">
                 <a
-                          href="./register_owner"
+                          href="./login_owner"
                        
                         >
-                    <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-9 rounded-md bg-gradient-to-r from-gray-400 to-gray-600 transform hover:scale-110">Register as an owner</button>
+                    <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-9 rounded-md bg-gradient-to-r from-gray-400 to-gray-600 transform hover:scale-110">SignIn as an owner</button>
                     </a>
                 </div>
                 <div class="inline-block mr-2 mt-2">
                 <a
-                          href="./register_renter"
+                          href="./login_renter"
                        
                         >
-                    <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-10 rounded-md bg-gradient-to-r from-teal-400  transform hover:scale-110">Register as a renter</button>
+                    <button type="button" class="focus:outline-none text-white text-sm py-2.5 px-10 rounded-md bg-gradient-to-r from-teal-400  transform hover:scale-110">SignIn as a renter</button>
                   </a>
                 </div>
                

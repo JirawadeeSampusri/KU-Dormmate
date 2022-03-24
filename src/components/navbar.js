@@ -4,9 +4,9 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"></link>
 const navigation = [
-  { name: 'Home', href: './', current: false},
-  { name: 'Setting', href: './', current: false },
-  { name: 'Contact', href: './', current: false },
+  { name: 'Home', href: './landing_owner', current: false},
+  // { name: 'Setting', href: './', current: false },
+  // { name: 'Contact', href: './', current: false },
   // { name: 'Add Blog', href: './create', current: false },
 ]
 

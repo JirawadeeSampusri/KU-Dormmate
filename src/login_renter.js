@@ -3,7 +3,7 @@ import {getFirebase} from "./firebase";
 import useInput from "./useInput";
 import { getAuth, signInWithEmailAndPassword, FacebookAuthProvider, signInWithPopup, GoogleAuthProvider, signInWithRedirect} from "firebase/auth";
 
-const Login = () => {
+const Login_Renter = () => {
     const firebaseInstance = getFirebase();
     const email = useInput("");
     const password = useInput("");
@@ -17,7 +17,7 @@ const Login = () => {
           const user = signInWithEmailAndPassword(auth, email.value, password.value);
           console.log("user", user);
           alert("Welcome back!");
-          window.location.replace("/")
+          window.location.replace("/landing_renter")
         }
       } catch (error) {
         console.log("error", error);
@@ -35,7 +35,7 @@ const Login = () => {
                 const accessToken = credential.accessToken;
                 console.log(user)
                 console.log(accessToken)
-                window.location.replace("/")
+                window.location.replace("/landing_renter")
                 // ...
             })
             .catch((error) => {
@@ -61,7 +61,7 @@ const Login = () => {
                 const accessToken = credential.accessToken;
                 console.log(user)
                 console.log(accessToken)
-                window.location.replace("/")
+                window.location.replace("/landing_renter")
                 // ...
             })
             .catch((error) => {
@@ -97,8 +97,7 @@ const Login = () => {
 
                 <div class="bg-white shadow rounded laptop:w-1/3 tablet:w-1/2 w-full p-10 mt-6">
                     <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Login to your account</p>
-                    <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Don't have account? <a href="./register_renter"   class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Sign up as Renter</a>
-                    <a href="./register_owner"   class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer">/ as Owner</a></p>
+                    <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Don't have account? <a href="./register_renter"   class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Sign up as Renter</a></p>
                     <button onClick={googleSignIn} aria-label="Continue with google" role="button" class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
                         <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.9892 10.1871C18.9892 9.36767 18.9246 8.76973 18.7847 8.14966H9.68848V11.848H15.0277C14.9201 12.767 14.3388 14.1512 13.047 15.0812L13.0289 15.205L15.905 17.4969L16.1042 17.5173C17.9342 15.7789 18.9892 13.221 18.9892 10.1871Z" fill="#4285F4" />
@@ -159,5 +158,5 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default Login_Renter;
 

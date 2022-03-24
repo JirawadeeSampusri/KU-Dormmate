@@ -12,6 +12,8 @@ const breakPoints= [
   { width:1200, itemToShow: 4},
 ];
 
+
+
 const Landing_Owner = () => {
 
     return ( 

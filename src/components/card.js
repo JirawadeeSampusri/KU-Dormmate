@@ -7,7 +7,7 @@ const Card = () => {
 
     const q = query(collection(db, "room"), where("price", "!=", null));
 
-    const [userDataArray, setUserDataArray] = useState([]);
+    // const [userDataArray, setUserDataArray] = useState([]);
     const [rooms, setRooms] = useState([]);
 
 
@@ -18,6 +18,9 @@ const Card = () => {
         }
         queryData()
       }, []);
+
+   
+
 
     return(
         <div>
@@ -53,6 +56,7 @@ const Card = () => {
                                         <a class="bg-teal-600 py-1 px-2 text-white rounded-lg" href="#">
                                             <span class="absolute inset-0"></span>
                                             {room.price} BHT
+                                           
                                         </a>
                                     </h3>
                                     <p class="text-base font-semibold text-gray-900 group-hover:text-teal-600">
