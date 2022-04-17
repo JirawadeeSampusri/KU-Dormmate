@@ -14,6 +14,8 @@ import Landing_Renter from './components/landing_renter';
 import Login_Owner from './login_owner';
 import Login_Renter from './login_renter';
 import FindMatch from './components/findmatch';
+import OwnerPosted from './components/ownerposted';
+import SavedDorm from './components/saved_dorm';
 
 //sfc
 
@@ -62,6 +64,12 @@ function App() {
                     </Route>
                     <Route path="/findMatch">
                       <FindMatch />
+                    </Route>
+                    <Route path="/ownerposted">
+                      <OwnerPosted />
+                    </Route>
+                    <Route path="/saved_dorm">
+                      <SavedDorm />
                     </Route>
                     <Route path="/blogs/:id">
                       <BlogDetails />

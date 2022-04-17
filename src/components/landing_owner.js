@@ -183,15 +183,6 @@ const Landing_Owner = () => {
                     alt="burger illustration"
                   />
 
-                  <div className="space-y-2">
-                    <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                      More features
-                    </h5>
-                    <p className="text-sm text-gray-600">
-                      Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                      nostrum.
-                    </p>
-                  </div>
                   <a
                     href="#"
                     className="flex justify-between items-center group-hover:text-yellow-600"

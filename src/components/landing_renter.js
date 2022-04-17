@@ -3,15 +3,84 @@ import Card from './card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../components/navbar_owner';
 import Carousel_Renter from './slider_renter';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import { Carousel } from 'react-bootstrap';
+import Draggable from 'react-draggable';
 
-// const breakPoints = [
-//   { width: 1, itemToShow: 1 },
-//   { width: 550, itemToShow: 2 },
-//   { width: 768, itemToShow: 3 },
-//   { width: 1200, itemToShow: 4 },
-// ];
+import ListItem from '@mui/material/ListItem';
+import List from '@mui/material/List';
+
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+
+import CloseIcon from '@mui/icons-material/Close';
+import Slide from '@mui/material/Slide';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 const Landing_Renter = () => {
+  const [open, setOpen] = React.useState(false);
+  const [open1, setOpen1] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
+
+  const handleClickOpen1 = () => () => {
+    setOpen1(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setOpen1(false);
+    setOpen2(false);
+  };
+
+  const descriptionElementRef = React.useRef(null);
+  React.useEffect(() => {
+    if (open1) {
+      const { current: descriptionElement } = descriptionElementRef;
+      if (descriptionElement !== null) {
+        descriptionElement.focus();
+      }
+    }
+  }, [open1]);
+
+  const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+    '& .MuiDialogContent-root': {
+      padding: theme.spacing(2),
+    },
+    '& .MuiDialogActions-root': {
+      padding: theme.spacing(1),
+    },
+  }));
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  function PaperComponent(props) {
+    return (
+      <Draggable
+        handle="#draggable-dialog-title"
+        cancel={'[class*="MuiDialogContent-root"]'}
+      >
+        <Paper {...props} />
+      </Draggable>
+    );
+  }
+
+  const handleClickOpen2 = () => {
+    setOpen2(true);
+  };
+
   return (
     <div>
       <Navbar />
@@ -30,82 +99,11 @@ const Landing_Renter = () => {
             />
           </div>
         </div>
-        <div className="relative bg-blueGray-50">
+        <div className="laptop:pl-14 laptop:pt-0 laptop:pr-14 laptop:pb-8 relative bg-blueGray-50">
           {/* Information */}
 
           <Carousel_Renter />
 
-          {/* <div className=" flex flex-wrap pb-12  ">
-          <div className="w-full tablet:w-4/12 ml-auto mr-auto px-4">
-            <img alt="..." className="max-w-full rounded-lg shadow-lg" src={require('./photo/img3.jpeg')}/>
-          </div>
-          <div className="w-full tablet:w-5/12 ml-auto mr-auto px-4">
-            <div className="tablet:pr-2">
-              <div className="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-3 mb-6 shadow-lg rounded-full bg-pink-300 ">
-                <i className="fas fa-rocket text-xl"></i>
-              </div>
-              <h3 className="text-3xl font-semibold">A growing company</h3>
-              <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                The extension comes with three pre-built pages to help you get
-                
-              </p>
-              <ul className="list-none mt-6">
-                <li className="py-2">
-                  <div className="flex items-center">
-                    <div>
-                      <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i className="fas fa-fingerprint"></i></span>
-                    </div>
-                    <div>
-                      <h4 className="text-blueGray-500">
-                        Gate 1
-                      </h4>
-                    </div>
-                  </div>
-                </li>
-                <li className="py-2">
-                  <div className="flex items-center">
-                    <div>
-                      <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i className="fab fa-html5"></i></span>
-                    </div>
-                    <div>
-                      <h4 className="text-blueGray-500">Gate 2</h4>
-                    </div>
-                  </div>
-                </li>
-                <li className="py-2">
-                  <div className="flex items-center">
-                    <div>
-                      <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i className="far fa-paper-plane"></i></span>
-                    </div>
-                    <div>
-                      <h4 className="text-blueGray-500">Gate 3</h4>
-                    </div>
-                  </div>
-                </li>
-                <li className="py-2">
-                  <div className="flex items-center">
-                    <div>
-                      <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i className="far fa-paper-plane"></i></span>
-                    </div>
-                    <div>
-                      <h4 className="text-blueGray-500">Phaholyothin Gate</h4>
-                    </div>
-                  </div>
-                </li>
-                <li className="py-2">
-                  <div className="flex items-center">
-                    <div>
-                      <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i className="far fa-paper-plane"></i></span>
-                    </div>
-                    <div>
-                      <h4 className="text-blueGray-500">Viphavadi Gate</h4>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> */}
           <div className="py-16 bg-gray-50 overflow-hidden">
             <div className="container m-auto px-6 space-y-8 text-gray-500 tablet:px-12">
               <div>
@@ -114,9 +112,13 @@ const Landing_Renter = () => {
                 </span>
                 {/* <h2 className="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">A technology-first approach to payments<br className="laptop:block" /> hidden and finance</h2> */}
               </div>
-              <div className="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden tablet:grid-cols-2 laptop:divide-y-0 laptop:grid-cols-3 grid-cols-4">
+
+              <div className="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden tablet:grid-cols-2 laptop:divide-y-0 laptop:grid-cols-3 grid-cols-3">
                 <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
-                  <div className="relative p-8 space-y-8">
+                  <div
+                    onClick={handleClickOpen1('paper')}
+                    className="relative p-8 space-y-8"
+                  >
                     <img
                       src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/burger.png"
                       className="w-10"
@@ -145,8 +147,48 @@ const Landing_Renter = () => {
                     </a>
                   </div>
                 </div>
+                <Dialog
+                  fullScreen
+                  open={open1}
+                  onClose={handleClose}
+                  TransitionComponent={Transition}
+                >
+                  <AppBar sx={{ position: 'relative' }}>
+                    <Toolbar>
+                      <IconButton
+                        edge="start"
+                        color="inherit"
+                        onClick={handleClose}
+                        aria-label="close"
+                      >
+                        <CloseIcon />
+                      </IconButton>
+                      {/* <Typography
+                        sx={{ ml: 2, flex: 1 }}
+                        variant="h6"
+                        component="div"
+                      >
+                        KU CAMPUS MAP
+                      </Typography> */}
+                    </Toolbar>
+                  </AppBar>
+                  <List>
+                    <ListItem>
+                      <img
+                        className="d-block w-100"
+                        src={require('./photo/kumap.jpg')}
+                        alt="Third slide"
+                      />
+                    </ListItem>
+                  </List>
+                </Dialog>
+
                 <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
-                  <div className="relative p-8 space-y-8">
+                  <div
+                    variant="outlined"
+                    onClick={handleClickOpen}
+                    className="relative p-8 space-y-8"
+                  >
                     <img
                       src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/trowel.png"
                       className="w-10"
@@ -154,7 +196,6 @@ const Landing_Renter = () => {
                       height="512"
                       alt="burger illustration"
                     />
-
                     <div className="space-y-2">
                       <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
                         Second feature
@@ -174,9 +215,55 @@ const Landing_Renter = () => {
                       </span>
                     </a>
                   </div>
+
+                  <BootstrapDialog
+                    onClose={handleClose}
+                    aria-labelledby="customized-dialog-title"
+                    open={open}
+                  >
+                    <DialogContent dividers>
+                      <DialogContentText>
+                        <div className="laptop:pl-20 laptop:pr-20 laptop:pt-0 bg-gray-100">
+                          <Carousel>
+                            <Carousel.Item interval={500}>
+                              <img
+                                className="d-block w-100"
+                                src={require('./photo/talai1.png')}
+                                alt="Second slide"
+                              />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                              <img
+                                className="d-block w-100"
+                                src={require('./photo/talai2.png')}
+                                alt="Third slide"
+                              />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                              <img
+                                className="d-block w-100"
+                                src={require('./photo/talai3.png')}
+                                alt="Third slide"
+                              />
+                            </Carousel.Item>
+                          </Carousel>
+                        </div>
+                      </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                      <Button autoFocus onClick={handleClose}>
+                        Cancel
+                      </Button>
+                    </DialogActions>
+                  </BootstrapDialog>
                 </div>
+
                 <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
-                  <div className="relative p-8 space-y-8">
+                  <div
+                    variant="outlined"
+                    onClick={handleClickOpen2}
+                    className="relative p-8 space-y-8"
+                  >
                     <img
                       src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/package-delivery.png"
                       className="w-10"
@@ -204,36 +291,52 @@ const Landing_Renter = () => {
                       </span>
                     </a>
                   </div>
-                </div>
-                <div className="relative group bg-gray-100 transition hover:z-[1] hover:shadow-2xl laptop:hidden laptop:block">
-                  <div className="relative p-8 space-y-8 border-dashed rounded-lg transition duration-300 group-hover:bg-white group-hover:border group-hover:scale-90">
-                    <img
-                      src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/metal.png"
-                      className="w-10"
-                      width="512"
-                      height="512"
-                      alt="burger illustration"
-                    />
-
-                    <div className="space-y-2">
-                      <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                        More features
-                      </h5>
-                      <p className="text-sm text-gray-600">
-                        Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                        nostrum.
-                      </p>
-                    </div>
-                    <a
-                      href="#"
-                      className="flex justify-between items-center group-hover:text-yellow-600"
-                    >
-                      <span className="text-sm">Read more</span>
-                      <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-                        &RightArrow;
-                      </span>
-                    </a>
-                  </div>
+                  <Dialog
+                    open={open2}
+                    onClose={handleClose}
+                    PaperComponent={PaperComponent}
+                    aria-labelledby="draggable-dialog-title"
+                  >
+                    <DialogContent>
+                      <DialogContentText>
+                        <div className="laptop:pl-20 laptop:pr-20 laptop:pt-0 bg-gray-100">
+                          <Carousel>
+                            <Carousel.Item interval={500}>
+                              <img
+                                className="d-block w-100"
+                                src={require('./photo/biketaxi1.png')}
+                                alt="Second slide"
+                              />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                              <img
+                                className="d-block w-100"
+                                src={require('./photo/biketaxi2.png')}
+                                alt="Third slide"
+                              />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                              <img
+                                className="d-block w-100"
+                                src={require('./photo/biketaxi3.png')}
+                                alt="Third slide"
+                              />
+                            </Carousel.Item>
+                            <Carousel.Item>
+                              <img
+                                className="d-block w-100"
+                                src={require('./photo/biketaxi4.png')}
+                                alt="Third slide"
+                              />
+                            </Carousel.Item>
+                          </Carousel>
+                        </div>
+                      </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                      <Button onClick={handleClose}>Cancel</Button>
+                    </DialogActions>
+                  </Dialog>
                 </div>
               </div>
             </div>

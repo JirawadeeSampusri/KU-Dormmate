@@ -1,33 +1,88 @@
 import { useParams } from 'react-router-dom';
-import { getDoc, doc } from 'firebase/firestore';
+import {
+  getDoc,
+  query,
+  where,
+  doc,
+  getDocs,
+  deleteDoc,
+} from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import useFirebase from '../usefirebase';
-import { Carousel } from 'react-responsive-carousel';
+// import { Carousel } from 'react-responsive-carousel';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import { collection, addDoc } from 'firebase/firestore';
+import { async } from '@firebase/util';
+import { handleBreakpoints } from '@mui/system';
+// import ImageListItemBar from '@mui/material/ImageListItemBar';
 
 const DetailsRoom = () => {
-  const { db } = useFirebase();
+  const { user, db } = useFirebase();
 
   let { id } = useParams();
 
-  const q = doc(db, 'room', id);
+  const favoriteCollection = collection(db, 'favorite');
 
   const [room, setRooms] = useState(null);
   const [profileowner, setProfileowner] = useState(null);
+  const [favorite, setFavorite] = useState(false);
 
   console.log(room);
 
+  const handleFavorite = async () => {
+    let data = {
+      roomid: id,
+      email: user.email,
+    };
+    console.log(data);
+    let response = await addDoc(favoriteCollection, data);
+    setFavorite(true);
+    console.log(response);
+  };
+
+  const handleRemoveFavorite = async () => {
+    const q = query(
+      favoriteCollection,
+      where('email', '==', user.email),
+      where('roomid', '==', id),
+    );
+    const removeFavoriteResponse = (await getDocs(q)).docs;
+    removeFavoriteResponse.forEach(async (value) => {
+      await deleteDoc(doc(db, 'favorite', value.id));
+    });
+    setFavorite(false);
+  };
+
   useEffect(() => {
+    if (!user) {
+      return
+    }
+
     const queryData = async () => {
-      const roomsResponse = await getDoc(q);
+      const q1 = doc(db, 'room', id);
+      const roomsResponse = await getDoc(q1);
 
       setRooms(() => roomsResponse.data());
       const p = doc(db, 'profileowner', roomsResponse.data().user.email);
       const profileResponse = await getDoc(p);
 
       setProfileowner(() => profileResponse.data());
+
+      const q2 = query(
+        favoriteCollection,
+        where('email', '==', user.email),
+        where('roomid', '==', id),
+      );
+
+      const FavoriteResponse = (await getDocs(q2)).docs;
+
+      if (FavoriteResponse.length > 0) {
+        setFavorite(() => true);
+      }
     };
     queryData();
-  }, []);
+  }, [user]);
 
   if (!room || !profileowner) {
     return 'loading';
@@ -77,12 +132,24 @@ const DetailsRoom = () => {
                 </div>
               </div>
 
-              <button
-                type="submit"
-                className="mt-10 w-full bg-teal-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-600"
-              >
-                Save to Favorite
-              </button>
+              {!favorite && (
+                <button
+                  type="button"
+                  onClick={handleFavorite}
+                  className="mt-10 w-full bg-teal-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-600"
+                >
+                  Save to Favorite
+                </button>
+              )}
+              {favorite && (
+                <button
+                  type="button"
+                  onClick={handleRemoveFavorite}
+                  className="mt-10 w-full bg-teal-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-600"
+                >
+                  Remove Favorite
+                </button>
+              )}
             </form>
           </div>
 
@@ -91,7 +158,7 @@ const DetailsRoom = () => {
             <div>
               <h3 className="sr-only">Description</h3>
 
-              <div className="space-y-6">
+              {/* <div className="space-y-6">
                 <p className="text-base text-gray-900">
                   The Basic Tee 6-Pack allows you to fully express your vibrant
                   personality with three grayscale options. Feeling adventurous?
@@ -99,10 +166,10 @@ const DetailsRoom = () => {
                   exclusive colorway: &quot;Black&quot;. Need to add an extra
                   pop of color to your outfit? Our white tee has you covered.
                 </p>
-              </div>
+              </div> */}
             </div>
 
-            <div className="mt-10">
+            <div className="">
               <h3 className="text-sm font-medium text-gray-900">Images</h3>
               {/* <Carousel dynamicHeight={true}>
                 {room.file.map((file) => {
@@ -111,13 +178,46 @@ const DetailsRoom = () => {
                       <img key={file}  src={file} />
                     </div>
                   );
-                })}
-              </Carousel> */}
-              <Carousel dynamicHeight={true}>
+                })} */}
+              {/* </Carousel> */}
+              {/* <Carousel dynamicHeight={false}>
                 {room.file.map((file) => (
                   <img key={file} src={file} />
                 ))}
-              </Carousel>
+
+              </Carousel> */}
+              <div className="block laptop:hidden">
+                <ImageList>
+                  {room.file.map((file) => (
+                    <ImageListItem key={file}>
+                      <img src={file} loading="lazy" />
+                      ))
+                      {/* <img
+                     src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                     srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                     alt={item.title}
+                     loading="lazy"
+                   /> */}
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+              </div>
+              <div className="hidden tablet:block">
+                <ImageList sx={{ width: 500, height: 450 }}>
+                  {room.file.map((file) => (
+                    <ImageListItem key={file}>
+                      <img src={file} loading="lazy" />
+                      ))
+                      {/* <img
+                     src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                     srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                     alt={item.title}
+                     loading="lazy"
+                   /> */}
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+              </div>
             </div>
             <div className="mt-10">
               <h2 className="text-sm font-medium text-gray-900">Description</h2>
@@ -146,9 +246,9 @@ const DetailsRoom = () => {
                 </p>
               </div>
               <div className=" flex  space-y-6">
-                <p className="text-sm text-gray-600">Twitter</p>
+                <p className="text-sm text-gray-600">Tel.</p>
                 <p className="text-sm mt-0 ml-4 text-gray-600">
-                  {profileowner.twitter}
+                  {profileowner.tel}
                 </p>
               </div>
             </div>

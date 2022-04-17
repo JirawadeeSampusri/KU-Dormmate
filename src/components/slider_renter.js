@@ -3,8 +3,9 @@ import { Carousel } from 'react-bootstrap';
 
 const Carousel_Renter = () => {
   return (
-    <Carousel>
-      <Carousel.Item interval={1000}>
+    <div className="laptop:pl-40 laptop:pr-40 laptop:pt-0 bg-gray-100">
+      <Carousel>
+        {/* <Carousel.Item interval={1000}>
         <img
           className="d-block w-100"
           src={require('./photo/s.png')}
@@ -14,30 +15,33 @@ const Carousel_Renter = () => {
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
-      </Carousel.Item>
-      {/* <Carousel.Item interval={500}>
-            <img
+      </Carousel.Item> */}
+        <Carousel.Item interval={500}>
+          <img
             className="d-block w-100"
-            src={require('./photo/img3.jpeg')}
+            src={require('./photo/steps.png')}
             alt="Second slide"
-            />
-            <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
+          />
+          <Carousel.Caption>
+            {/* <h3>Second slide label</h3> */}
+            {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
+          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-            <img
+          <img
             className="d-block w-100"
-            src={require('./photo/img3.jpeg')}
+            src={require('./photo/hometypes.png')}
             alt="Third slide"
-            />
-            <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </Carousel.Caption>
-        </Carousel.Item> */}
-    </Carousel>
+          />
+          <Carousel.Caption>
+            {/* <h3>Third slide label</h3> */}
+            {/* <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p> */}
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+    </div>
   );
 };
 export default Carousel_Renter;

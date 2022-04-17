@@ -27,8 +27,13 @@ const Profile_Renter = () => {
                 <ScrollDialog_renter />
               </div>
               <div className="flex-grow ml-2 ">
-                <a href="./findMatch">
+                <a className="no-underline" href="./findMatch">
                   <Button variant="outlined">Find Match</Button>
+                </a>
+              </div>
+              <div className="flex-grow ml-2 ">
+                <a className="no-underline" href="./saved_dorm">
+                  <Button variant="outlined">Saved</Button>
                 </a>
               </div>
             </div>
@@ -43,12 +48,12 @@ const Profile_Renter = () => {
               Basic Information
             </button>
 
-            <button
+            {/* <button
               href="#"
               className="text-sm p-2 bg-slate-300 text-center rounded font-semibold hover:bg-teal-600 hover:text-gray-200"
             >
               Saved
-            </button>
+            </button> */}
 
             <button
               href="#"

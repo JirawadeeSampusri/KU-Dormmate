@@ -125,7 +125,7 @@ const Card = () => {
                     <option value="5">Phaholyothin Gate</option>
                   </select>
                   <br />
-                  <p> Level </p>
+                  {/* <p> Level </p>
                   <select className="text-gray-300 form-select appearance-none block w-full px-3 py-1.5 text-base font-normal bg-gray-800 bg-clip-padding bg-no-repeat border border-solid border-gray-700 rounded-md transition duration-300 ease-in-out m-0 focus:border-gray-500 focus:outline-none">
                     <option selected>select</option>
                     <option value="1">One</option>
@@ -134,7 +134,7 @@ const Card = () => {
                     <option value="3">Four</option>
                     <option value="3">More than Four</option>
                   </select>
-                  <br />
+                  <br /> */}
                   <button
                     type="submit"
                     className="mb-3 border-2 border-teal-600 text-white w-full py-2 rounded-md text-1xl font-medium hover:bg-teal-600 transition duration-300"

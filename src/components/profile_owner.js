@@ -4,13 +4,14 @@ import ScrollDialog from './dialog';
 import { useEffect } from 'react';
 import { getDoc, doc, setDoc } from 'firebase/firestore';
 import useFirebase from '../usefirebase';
+import Button from '@mui/material/Button';
 
 const Profile_Owner = () => {
   const { user, db } = useFirebase();
 
   const [name, setName] = React.useState('');
 
-  // const [tel, setTel] =  React.useState('');
+  const [tel, setTel] = React.useState('');
   const [location, setLocation] = React.useState('');
   const [instagram, setInstagram] = React.useState('');
   const [facebook, setFacebook] = React.useState('');
@@ -23,6 +24,7 @@ const Profile_Owner = () => {
       instagram: instagram,
       facebook: facebook,
       twitter: twitter,
+      tel: tel,
       user: {
         email: user.email,
         created: user.metadata.creationTime,
@@ -48,6 +50,11 @@ const Profile_Owner = () => {
       console.log(queryData);
 
       setName(() => profileDetail.name);
+      setTel(() => profileDetail.tel);
+      setLocation(() => profileDetail.location);
+      setInstagram(() => profileDetail.instagram);
+      setFacebook(() => profileDetail.facebook);
+      setTwitter(() => profileDetail.twitter);
     };
     queryData();
   }, [user]);
@@ -71,8 +78,16 @@ const Profile_Owner = () => {
             <h4 className="text-sm mb-6 font-semibold">
               Joined Since 21 November 2021
             </h4>
-            {/* < CustomizedDialogs /> */}
-            <ScrollDialog />
+            <div className="flex">
+              <div className="flex-grow ">
+                <ScrollDialog />
+              </div>
+              <div className="flex-grow ml-2 ">
+                <a className="no-underline" href="./ownerposted">
+                  <Button variant="outlined">Posted</Button>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-12 bg-white laptop:p-14 ">
@@ -84,12 +99,12 @@ const Profile_Owner = () => {
               Basic Information
             </a>
 
-            <a
+            {/* <a
               href="#"
               className="text-sm p-2 bg-slate-300 text-center rounded font-semibold hover:bg-teal-600 hover:text-gray-200"
             >
               Posted
-            </a>
+            </a> */}
 
             <a
               href="#"
@@ -138,10 +153,11 @@ const Profile_Owner = () => {
                     <input
                       type="text"
                       placeholder="tel"
-                      // id="tel"
-                      // onChange={function(event){
-                      //   setTel(event.target.value)
-                      // }} value={tel}
+                      id="tel"
+                      onChange={function (event) {
+                        setTel(event.target.value);
+                      }}
+                      value={tel}
                       className="w-full appearance-none text-black  rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
                     />
                   </div>
@@ -164,7 +180,7 @@ const Profile_Owner = () => {
                     }}
                     value={location}
                     className="w-full appearance-none text-black  rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 "
-                  ></textarea>
+                  >{location}</textarea>
                 </div>
 
                 <div>
