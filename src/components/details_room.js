@@ -9,13 +9,9 @@ import {
 } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import useFirebase from '../usefirebase';
-// import { Carousel } from 'react-responsive-carousel';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { collection, addDoc } from 'firebase/firestore';
-import { async } from '@firebase/util';
-import { handleBreakpoints } from '@mui/system';
-// import ImageListItemBar from '@mui/material/ImageListItemBar';
 
 const DetailsRoom = () => {
   const { user, db } = useFirebase();
@@ -27,8 +23,6 @@ const DetailsRoom = () => {
   const [room, setRooms] = useState(null);
   const [profileowner, setProfileowner] = useState(null);
   const [favorite, setFavorite] = useState(false);
-
-  console.log(room);
 
   const handleFavorite = async () => {
     let data = {
@@ -56,7 +50,7 @@ const DetailsRoom = () => {
 
   useEffect(() => {
     if (!user) {
-      return
+      return;
     }
 
     const queryData = async () => {
@@ -66,6 +60,7 @@ const DetailsRoom = () => {
       setRooms(() => roomsResponse.data());
       const p = doc(db, 'profileowner', roomsResponse.data().user.email);
       const profileResponse = await getDoc(p);
+      console.log(p);
 
       setProfileowner(() => profileResponse.data());
 
@@ -87,6 +82,30 @@ const DetailsRoom = () => {
   if (!room || !profileowner) {
     return 'loading';
   }
+
+  // console.log(room);
+
+  const checkgate = () => {
+    if (room.gate1 === true && room.gate2 === true && room.gate3 === true) {
+      return 'gate1, gate2, gate3';
+    } else if (room.gate1 === true && room.gate2 === true) {
+      return 'gate1, gate2';
+    } else if (room.gate2 === true && room.gate3 === true) {
+      return 'gate2, gate3';
+    } else if (room.gate3 === true && room.gateViphavadi === true) {
+      return 'gate Viphavadi';
+    } else if (room.gate1 === true) {
+      return 'gate 1';
+    } else if (room.gate2 === true) {
+      return 'gate 2';
+    } else if (room.gate3 === true) {
+      return 'gate 3';
+    } else if (room.gatePhaholyothin === true) {
+      return 'gate Phaholyothin';
+    } else if (room.gateViphavadi === true) {
+      return 'gate Viphavadi';
+    }
+  };
 
   return (
     <div className="bg-gray-50">
@@ -111,12 +130,7 @@ const DetailsRoom = () => {
                   <h3 className="text-sm text-gray-900 font-medium">
                     Specific Address :
                   </h3>
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
-                  >
-                    Map
-                  </a>
+                  {checkgate()}
                 </div>
               </div>
 
@@ -127,7 +141,9 @@ const DetailsRoom = () => {
                     Address :
                   </h3>
                   <div className="mt-4 space-y-6">
-                    <p className="text-sm text-gray-600">{room.address}</p>
+                    <p className="text-sm text-gray-600">
+                      {profileowner.location}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -219,13 +235,16 @@ const DetailsRoom = () => {
                 </ImageList>
               </div>
             </div>
-            <div className="mt-10">
-              <h2 className="text-sm font-medium text-gray-900">Description</h2>
-
-              <div className="mt-4 space-y-6">
-                <p className="text-sm text-gray-600">{room.description}</p>
+            {room.description && (
+              <div className="mt-10">
+                <h2 className="text-sm font-medium text-gray-900">
+                  Description
+                </h2>
+                <div className="mt-4 space-y-6">
+                  <p className="text-sm text-gray-600">{room.description}</p>
+                </div>
               </div>
-            </div>
+            )}
             <div className="mt-10">
               <h2 className="text-sm font-medium text-gray-900">Contacts</h2>
 

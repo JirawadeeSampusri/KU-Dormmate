@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import BlogDetails from './components/blogdetails';
 import NotFound from './notfound';
 import Landing from './components/landing';
-import Footer from './components/footer';
+// import Footer from './components/footer';
 import DetailsRoom from './components/details_room';
 import Register_Renter from './register_renter';
 import Register_Owner from './register_owner';
@@ -82,7 +82,7 @@ function App() {
               </div>
             </Switch>
           </Router>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </Router>

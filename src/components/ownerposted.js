@@ -27,7 +27,7 @@ const OwnerPosted = () => {
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
 
-  const postedCollection = collection(db, 'room');
+  // const postedCollection = collection(db, 'room');
 
   const fetchRoom = React.useCallback(() => {
     if (!user) {

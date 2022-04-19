@@ -156,7 +156,7 @@ const Login_Renter = () => {
                 fill="#EB4335"
               />
             </svg>
-            <p className="text-base font-medium ml-4 text-gray-700">
+            <p className="text-base mb-0 font-medium ml-4 text-gray-700">
               Continue with Google
             </p>
           </button>
@@ -173,7 +173,7 @@ const Login_Renter = () => {
               src={require('./assets/facebook.png')}
             />
 
-            <p className="text-base font-medium ml-4 text-gray-700">
+            <p className="text-base mb-0 font-medium ml-4 text-gray-700">
               Continue with Facebook
             </p>
           </button>

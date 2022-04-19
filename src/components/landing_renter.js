@@ -1,7 +1,7 @@
 import './landing.css';
 import Card from './card';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from '../components/navbar_owner';
+import Navbar from '../components/navbar';
 import Carousel_Renter from './slider_renter';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -106,12 +106,12 @@ const Landing_Renter = () => {
 
           <div className="py-16 bg-gray-50 overflow-hidden">
             <div className="container m-auto px-6 space-y-8 text-gray-500 tablet:px-12">
-              <div>
+              {/* <div>
                 <span className="text-gray-600 text-lg font-semibold">
-                  Main features
+                 
                 </span>
                 {/* <h2 className="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">A technology-first approach to payments<br className="laptop:block" /> hidden and finance</h2> */}
-              </div>
+              {/* </div> */}
 
               <div className="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden tablet:grid-cols-2 laptop:divide-y-0 laptop:grid-cols-3 grid-cols-3">
                 <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
@@ -120,7 +120,7 @@ const Landing_Renter = () => {
                     className="relative p-8 space-y-8"
                   >
                     <img
-                      src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/burger.png"
+                      src={require('./photo/map.png')}
                       className="w-10"
                       width="512"
                       height="512"
@@ -129,16 +129,16 @@ const Landing_Renter = () => {
 
                     <div className="space-y-2">
                       <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                        First feature
+                        Kasetsart University Map
                       </h5>
                       <p className="text-sm text-gray-600">
-                        Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                        nostrum.
+                        Places, Fastest Walking Route, Bike Route, Bus Route,
+                        Bus Stop.
                       </p>
                     </div>
                     <a
                       href="#"
-                      className="flex justify-between items-center group-hover:text-yellow-600"
+                      className="no-underline flex justify-between items-center group-hover:text-yellow-600"
                     >
                       <span className="text-sm">Read more</span>
                       <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
@@ -190,7 +190,7 @@ const Landing_Renter = () => {
                     className="relative p-8 space-y-8"
                   >
                     <img
-                      src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/trowel.png"
+                      src={require('./photo/bus.png')}
                       className="w-10"
                       width="512"
                       height="512"
@@ -198,18 +198,17 @@ const Landing_Renter = () => {
                     />
                     <div className="space-y-2">
                       <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                        Second feature
+                        Kasetsart Bus Route
                       </h5>
                       <p className="text-sm text-gray-600">
-                        Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                        nostrum.
+                        More details about Bus Route.
                       </p>
                     </div>
                     <a
                       href="#"
-                      className="flex justify-between items-center group-hover:text-yellow-600"
+                      className="no-underline flex justify-between items-center group-hover:text-yellow-600"
                     >
-                      <span className="text-sm">Read more</span>
+                      <span className="mt-6 text-sm">Read more</span>
                       <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
                         &RightArrow;
                       </span>
@@ -265,7 +264,7 @@ const Landing_Renter = () => {
                     className="relative p-8 space-y-8"
                   >
                     <img
-                      src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/package-delivery.png"
+                      src={require('./photo/bike.png')}
                       className="w-10"
                       width="512"
                       height="512"
@@ -274,16 +273,16 @@ const Landing_Renter = () => {
 
                     <div className="space-y-2">
                       <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                        Third feature
+                        Motorcycle Taxi Rate
                       </h5>
                       <p className="text-sm text-gray-600">
-                        Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                        nostrum.
+                        From Univerity Gate/student's dormitories building to
+                        the destination with Price
                       </p>
                     </div>
                     <a
                       href="#"
-                      className="flex justify-between items-center group-hover:text-yellow-600"
+                      className="flex no-underline justify-between items-center group-hover:text-yellow-600"
                     >
                       <span className="text-sm">Read more</span>
                       <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">

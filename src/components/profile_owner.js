@@ -5,17 +5,23 @@ import { useEffect } from 'react';
 import { getDoc, doc, setDoc } from 'firebase/firestore';
 import useFirebase from '../usefirebase';
 import Button from '@mui/material/Button';
+import { getAuth, signOut } from 'firebase/auth';
 
 const Profile_Owner = () => {
   const { user, db } = useFirebase();
+  const auth = getAuth();
 
   const [name, setName] = React.useState('');
-
   const [tel, setTel] = React.useState('');
   const [location, setLocation] = React.useState('');
   const [instagram, setInstagram] = React.useState('');
   const [facebook, setFacebook] = React.useState('');
   const [twitter, setTwitter] = React.useState('');
+
+  const logout = async () => {
+    await signOut(auth);
+    window.location.replace('/login_owner');
+  };
 
   const handleSubmit = async () => {
     let data = {
@@ -49,6 +55,10 @@ const Profile_Owner = () => {
       const profileDetail = profileResponse.data();
       console.log(queryData);
 
+      if (!profileDetail.name) {
+        return;
+      }
+
       setName(() => profileDetail.name);
       setTel(() => profileDetail.tel);
       setLocation(() => profileDetail.location);
@@ -74,9 +84,11 @@ const Profile_Owner = () => {
               src={require('./photo/image1.jpeg')}
               className="h-24 w-24 object-cover rounded-full"
             />
-            <h1 className="text-xl mt-2 font-semibold">ABC Condominium</h1>
-            <h4 className="text-sm mb-6 font-semibold">
-              Joined Since 21 November 2021
+            <h1 className="text-xl mb-2 mt-2 font-semibold">
+              {name ? name : 'Owner '}
+            </h1>
+            <h4 className="text-sm mb-4  font-semibold">
+              Join since {auth.currentUser.metadata.creationTime}
             </h4>
             <div className="flex">
               <div className="flex-grow ">
@@ -87,17 +99,22 @@ const Profile_Owner = () => {
                   <Button variant="outlined">Posted</Button>
                 </a>
               </div>
+              <div className="flex-grow ml-2 ">
+                <a className="no-underline" href="./saved_dorm">
+                  <Button variant="outlined">Saved</Button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
         <div className="grid grid-cols-12 bg-white laptop:p-14 ">
           <div className="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid tablet:space-x-0 tablet:space-y-4 tablet:flex-col tablet:col-span-2 tablet:justify-start ">
-            <a
+            <button
               href="#"
               className="text-sm p-2 bg-teal-600 text-white text-center rounded font-bold"
             >
               Basic Information
-            </a>
+            </button>
 
             {/* <a
               href="#"
@@ -106,12 +123,12 @@ const Profile_Owner = () => {
               Posted
             </a> */}
 
-            <a
-              href="#"
-              className="text-sm p-2 bg-rose-600 text-center rounded font-semibold hover:bg-red-600 hover:text-gray-200"
+            <button
+              onClick={logout}
+              className="text-sm p-2 bg-red-600 text-center rounded font-semibold  hover:text-gray-200"
             >
               Logout
-            </a>
+            </button>
           </div>
           <div className="col-span-12 tablet:border-solid tablet:border-l tablet:border-black tablet:border-opacity-25 h-full pb-12 tablet:col-span-10">
             <div className="px-4 pt-4">
@@ -136,22 +153,9 @@ const Profile_Owner = () => {
 
                 <div className="flex flex-col space-y-4 tablet:space-y-0 tablet:flex-row tablet:space-x-4">
                   <div className="form-item w-full">
-                    <label className="text-xl ">Username</label>
-                    <input
-                      // type="text"
-                      // placeholder="username"
-                      // id="username"
-                      // onChange={function (event) {
-                      //   setUsername(event.target.value);
-                      // }}
-                      // value={username}
-                      className="w-full appearance-none text-black  rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
-                    />
-                  </div>
-                  <div className="form-item w-full">
                     <label className="text-xl ">Tel</label>
                     <input
-                      type="text"
+                      type="tel"
                       placeholder="tel"
                       id="tel"
                       onChange={function (event) {
@@ -180,7 +184,9 @@ const Profile_Owner = () => {
                     }}
                     value={location}
                     className="w-full appearance-none text-black  rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 "
-                  >{location}</textarea>
+                  >
+                    {location}
+                  </textarea>
                 </div>
 
                 <div>

@@ -1,8 +1,15 @@
 import ScrollDialog_renter from './dialog_renter';
 import Navbar from './navbar';
 import Button from '@mui/material/Button';
+import { getAuth, signOut } from 'firebase/auth';
 
 const Profile_Renter = () => {
+  const auth = getAuth();
+  const logout = async () => {
+    await signOut(auth);
+    window.location.replace('/login_renter');
+  };
+  console.log(auth);
   return (
     <div>
       <Navbar />
@@ -14,13 +21,11 @@ const Profile_Renter = () => {
             className="bg w-full h-full object-cover object-center absolute z-0"
           />
           <div className="flex flex-col justify-center items-center relative h-full bg-black bg-opacity-50 text-white">
-            <img
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-              className="h-24 w-24 object-cover rounded-full"
-            />
-            <h1 className="text-2xl font-semibold">Antonia Howell</h1>
+            <h1 className="text-xl mt-2 font-semibold">
+              {auth.currentUser.email}
+            </h1>
             <h4 className="text-sm mb-4  font-semibold">
-              Joined Since 21 November 2021
+              Join since {auth.currentUser.metadata.creationTime}
             </h4>
             <div className="flex">
               <div className="flex-grow ">
@@ -48,15 +53,8 @@ const Profile_Renter = () => {
               Basic Information
             </button>
 
-            {/* <button
-              href="#"
-              className="text-sm p-2 bg-slate-300 text-center rounded font-semibold hover:bg-teal-600 hover:text-gray-200"
-            >
-              Saved
-            </button> */}
-
             <button
-              href="#"
+              onClick={logout}
               className="text-sm p-2 bg-rose-600 text-center rounded font-semibold hover:bg-red-600 hover:text-gray-200"
             >
               Logout
@@ -77,7 +75,7 @@ const Profile_Renter = () => {
                   <label className="text-xl ">Email</label>
                   <input
                     type="text"
-                    value="antoniaph@gmail.com"
+                    value={auth.currentUser.email}
                     className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
                   />
                 </div>

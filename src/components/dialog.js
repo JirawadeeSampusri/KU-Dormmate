@@ -96,6 +96,10 @@ export default function ScrollDialog() {
     let file = uploadFiles();
     console.log(response);
     console.log(file);
+
+    if (!response) {
+      handleClose();
+    }
   };
 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -122,72 +126,75 @@ export default function ScrollDialog() {
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
-          <div className="px-5 pb-5">
-            {/* room */}
-            <label for="title" className="text-lx font-serif">
-              Room :
-            </label>
-            <input
-              id="room"
-              type="room"
-              onChange={function (event) {
-                setRoom(event.target.value);
-              }}
-              value={room}
-              className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white  focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
-            />
-
-            {/* price */}
-            <div className="pt-3">
-              <label for="title" className="text-lx font-serif ">
-                Price :
+        <DialogTitle id="scroll-dialog-title">Post Dorm</DialogTitle>
+        <form>
+          <DialogContent dividers={scroll === 'paper'}>
+            <div className="px-5 pb-5">
+              {/* room */}
+              <label for="title" className="text-lx font-serif">
+                Room :
               </label>
-
-              <div className="flex">
-                <div className="flex-grow w-1/4 pr-2">
-                  <input
-                    id="price"
-                    type="number"
-                    required
-                    min={0}
-                    onChange={function (event) {
-                      setPrice(event.target.value);
-                    }}
-                    value={price}
-                    placeholder="Amount"
-                    className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
-                  />
-                </div>
-                <div className="flex-grow w-1/4 ">
-                  <input
-                    placeholder="BHT"
-                    className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg  focus:border-blueGray-500 focus:bg-white  focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current "
-                    disabled
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* address */}
-            <div className="items-center pt-3">
-              <label for="address" className="text-lx  font-serif">
-                Address :
-              </label>
-              <textarea
-                id="address"
-                type="address"
+              <input
+                required
+                id="room"
+                type="room"
                 onChange={function (event) {
-                  setAddress(event.target.value);
+                  setRoom(event.target.value);
                 }}
-                value={address}
-                rows="3"
-                placeholder="Street, house number, area, sub-area and postcode"
-                className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white  focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
+                value={room}
+                className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white  focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
               />
 
-              {/* <div className="flex">
+              {/* price */}
+              <div className="pt-3">
+                <label for="title" className="text-lx font-serif ">
+                  Price :
+                </label>
+
+                <div className="flex">
+                  <div className="flex-grow w-1/4 pr-2">
+                    <input
+                      id="price"
+                      type="number"
+                      required
+                      min={0}
+                      onChange={function (event) {
+                        setPrice(event.target.value);
+                      }}
+                      value={price}
+                      placeholder="Amount"
+                      className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
+                    />
+                  </div>
+                  <div className="flex-grow w-1/4 ">
+                    <input
+                      placeholder="BHT"
+                      className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg  focus:border-blueGray-500 focus:bg-white  focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current "
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* address */}
+              <div className="items-center pt-3">
+                <label for="address" className="text-lx  font-serif">
+                  Address :
+                </label>
+                <textarea
+                  id="address"
+                  type="address"
+                  required
+                  onChange={function (event) {
+                    setAddress(event.target.value);
+                  }}
+                  value={address}
+                  rows="3"
+                  placeholder="Street, house number, area, sub-area and postcode"
+                  className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white  focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
+                />
+
+                {/* <div className="flex">
                       <div className="flex-grow w-1/4 pr-2">
                         <input placeholder="Sub-area" className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
                         </div>
@@ -195,158 +202,129 @@ export default function ScrollDialog() {
                         <input placeholder="Area" className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
                         </div>
                     </div> */}
-            </div>
-
-            {/* default address
-                  <div className="flex">
-                    <div className="flex-grow w-1/4 pr-2">
-                      <input placeholder="Bangkok, Thailand" className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   rounded-lg border-blueGray-500    " disabled/>
-                      </div>
-                      <div className="flex-grow w-1/4 ">
-                      <input placeholder="Postcode" className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-800 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"/>
-                      </div>
-                  </div> */}
-
-            {/* Specific address */}
-            <div className="items-center pt-3">
-              <label for="address" className="text-lx  font-serif">
-                Specific address :{' '}
-              </label>
-              <div>
-                <label for="title" className="text-lx font-quicksand">
-                  Gate 1
-                </label>
-                <Checkbox
-                  {...label}
-                  checked={isGate1}
-                  value={isGate1}
-                  onChange={(event) => setIsGate1(event.target.checked)}
-                  type="checkbox"
-                  color="success"
-                />
-                <label for="title" className="text-lx font-quicksand">
-                  Gate 2
-                </label>
-                <Checkbox
-                  {...label}
-                  checked={isGate2}
-                  value={isGate2}
-                  onChange={(event) => setIsGate2(event.target.checked)}
-                  type="checkbox"
-                  color="success"
-                />
-                <label for="title" className="text-lx font-quicksand">
-                  Gate 3
-                </label>
-                <Checkbox
-                  {...label}
-                  checked={isGate3}
-                  value={isGate3}
-                  onChange={(event) => setIsGate3(event.target.checked)}
-                  type="checkbox"
-                  color="success"
-                />
               </div>
-              <div>
-                <label for="title" className="text-lx font-quicksand">
-                  Viphavadi Gate
+
+              {/* Specific address */}
+              <div className="items-center pt-3">
+                <label for="address" className="text-lx  font-serif">
+                  Specific address :{' '}
                 </label>
-                <Checkbox
-                  {...label}
-                  checked={isGateViphavadi}
-                  value={isGateViphavadi}
-                  onChange={(event) => setIsViphavadi(event.target.checked)}
-                  type="checkbox"
-                  color="success"
-                />
-                <label for="title" className="text-lx font-quicksand">
-                  Phaholyothin Gate
-                </label>
-                <Checkbox
-                  {...label}
-                  checked={isGatePhaholyothin}
-                  value={isGatePhaholyothin}
-                  onChange={(event) => setIsPhaholyothin(event.target.checked)}
-                  type="checkbox"
-                  color="success"
-                />
+                <div>
+                  <label for="title" className="text-lx font-quicksand">
+                    Gate 1
+                  </label>
+                  <Checkbox
+                    {...label}
+                    checked={isGate1}
+                    value={isGate1}
+                    onChange={(event) => setIsGate1(event.target.checked)}
+                    type="checkbox"
+                    color="success"
+                  />
+                  <label for="title" className="text-lx font-quicksand">
+                    Gate 2
+                  </label>
+                  <Checkbox
+                    {...label}
+                    checked={isGate2}
+                    value={isGate2}
+                    onChange={(event) => setIsGate2(event.target.checked)}
+                    type="checkbox"
+                    color="success"
+                  />
+                  <label for="title" className="text-lx font-quicksand">
+                    Gate 3
+                  </label>
+                  <Checkbox
+                    {...label}
+                    checked={isGate3}
+                    value={isGate3}
+                    onChange={(event) => setIsGate3(event.target.checked)}
+                    type="checkbox"
+                    color="success"
+                  />
+                </div>
+                <div>
+                  <label for="title" className="text-lx font-quicksand">
+                    Viphavadi Gate
+                  </label>
+                  <Checkbox
+                    {...label}
+                    checked={isGateViphavadi}
+                    value={isGateViphavadi}
+                    onChange={(event) => setIsViphavadi(event.target.checked)}
+                    type="checkbox"
+                    color="success"
+                  />
+                  <label for="title" className="text-lx font-quicksand">
+                    Phaholyothin Gate
+                  </label>
+                  <Checkbox
+                    {...label}
+                    checked={isGatePhaholyothin}
+                    value={isGatePhaholyothin}
+                    onChange={(event) =>
+                      setIsPhaholyothin(event.target.checked)
+                    }
+                    type="checkbox"
+                    color="success"
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* upload image */}
+              {/* upload image */}
 
-            <Stack className="pt-2 pb-2 mt-6 " spacing={2}>
-              <form onSubmit={formHandler}>
-                <input type="file" className="input" />
+              <Stack className="pt-2 pb-2 mt-6 " spacing={2}>
+                <form onSubmit={formHandler}>
+                  <input type="file" className="input" />
 
-                <button
-                  className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow"
-                  type="submit"
-                >
-                  Upload
-                </button>
-                <p className="py-1 px-3 mb-0 ">Upload {progress} %</p>
-              </form>
-              {files.map((file) => (
-                <img
-                  key={file}
-                  src={file}
-                  onClick={() => {
-                    const newFile = files.filter((e) => e !== file);
-                    setFiles(newFile);
+                  <button
+                    className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-3 border border-gray-400 rounded shadow"
+                    type="submit"
+                  >
+                    Upload
+                  </button>
+                  <p className="py-1 px-3 mb-0 ">Upload {progress} %</p>
+                </form>
+                {files.map((file) => (
+                  <img
+                    key={file}
+                    src={file}
+                    onClick={() => {
+                      const newFile = files.filter((e) => e !== file);
+                      setFiles(newFile);
+                    }}
+                  />
+                ))}
+                <div className="inline-flex"></div>
+              </Stack>
+
+              {/* description */}
+              <div className="items-center pt-4">
+                <label for="Description" className="text-lx font-serif">
+                  Description:
+                </label>
+                <textarea
+                  id="description"
+                  type="description"
+                  required
+                  onChange={function (event) {
+                    setDescription(event.target.value);
                   }}
+                  value={description}
+                  rows="5"
+                  className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
                 />
-              ))}
-
-              {/* <label className="pt-4" htmlFor="contained-button-file">
-                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
-                        <Button variant="contained" component="span">
-                          Upload Image1
-                        </Button>
-                      </label> */}
-              {/* <label htmlFor="contained-button-file">
-                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
-                        <Button variant="contained" component="span">
-                          Upload Image2
-                        </Button>
-                      </label>
-                      <label htmlFor="contained-button-file">
-                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
-                        <Button variant="contained" component="span">
-                          Upload Image3
-                        </Button>
-                      </label>
-                      <label htmlFor="contained-button-file">
-                        <Input accept="image/*" id="contained-button-file" multiple type="file" />
-                        <Button variant="contained" component="span">
-                          Upload Image4
-                        </Button>
-                      </label> */}
-              <div className="inline-flex"></div>
-            </Stack>
-
-            {/* description */}
-            <div className="items-center pt-4">
-              <label for="Description" className="text-lx font-serif">
-                Description:
-              </label>
-              <textarea
-                id="description"
-                type="description"
-                onChange={function (event) {
-                  setDescription(event.target.value);
-                }}
-                value={description}
-                rows="5"
-                className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-gray-200  focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400"
-              />
+              </div>
             </div>
-          </div>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit}>Post</Button>
-        </DialogActions>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Cancel</Button>
+            <Button type="submit" onClick={handleSubmit}>
+              Post
+            </Button>
+          </DialogActions>
+        </form>
       </Dialog>
     </div>
   );

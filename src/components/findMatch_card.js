@@ -172,52 +172,112 @@ const FindMatch_card = () => {
               <section className="mt-4 grid ">
                 {roommates.map((roommateref) => {
                   const roommate = roommateref.data();
+
+                  const checkAge = () => {
+                    if (
+                      !roommate.lowestAge &&
+                      !roommate.midAge &&
+                      !roommate.higherAge &&
+                      !roommate.highestAge
+                    ) {
+                      return 'Any';
+                    } else if (
+                      roommate.lowestAge === true &&
+                      roommate.midAge === true
+                    ) {
+                      return '17 - 22 years old';
+                    } else if (
+                      roommate.lowestAge === true &&
+                      roommate.higherAge === true
+                    ) {
+                      return '17 - 25 years old';
+                    } else if (
+                      roommate.lowestAge === true &&
+                      roommate.highestAge === true
+                    ) {
+                      return 'more than 17 years old';
+                    } else if (
+                      roommate.midAge === true &&
+                      roommate.higherAge === true
+                    ) {
+                      return '20 - 25 years old';
+                    } else if (
+                      roommate.midAge === true &&
+                      roommate.highestAge === true
+                    ) {
+                      return 'More than 20 years old';
+                    } else if (
+                      roommate.higherAge === true &&
+                      roommate.highestAge === true
+                    ) {
+                      return 'more than 23 years old';
+                    } else if (roommate.lowestAge === true) {
+                      return '17 - 19 years old';
+                    } else if (roommate.midAge === true) {
+                      return '20 - 22 years old';
+                    } else if (roommate.higherAge === true) {
+                      return '23 - 25 years old';
+                    } else if (roommate.highestAge === true) {
+                      return 'More than 25 years old';
+                    }
+                  };
+
+                  const checkGender = () => {
+                    console.log(roommate);
+                    if (roommate.male === true) {
+                      return 'Male';
+                    } else if (roommate.female === true) {
+                      return 'Female';
+                    } else if (roommate.others === true) {
+                      return 'Others';
+                    }
+                  };
+
+                  const checkLevel = () => {
+                    if (roommate.firstYear === true) {
+                      return '1';
+                    } else if (roommate.secYear === true) {
+                      return '2';
+                    } else if (roommate.thirdYear === true) {
+                      return '3';
+                    } else if (roommate.fourthYear === true) {
+                      return '4';
+                    } else if (roommate.morethanfourthYear === true) {
+                      return '5';
+                    }
+                  };
+
                   return (
                     <article className="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
-                      {/* <div className="px-3 py-4">
-                        
-                        <h3 className="text-sm text-gray-500 pb-2">
-                          <a
-                            className="bg-teal-600 py-1 px-2 text-white rounded-lg"
-                            href="#"
-                          >
-                            <span className="absolute inset-0"></span>
-                            {roommate.user.email}
-                            {roommate.price} BHT
-                          </a>
-                        </h3>
-                        <p className="text-base font-semibold text-gray-900 group-hover:text-teal-600">
-                          {roommate.room}{' '}
-                        </p>
-                      </div> */}
                       <div class="laptop:flex shadow rounded-lg border  border-gray-400">
-                        <div class="bg-blue-600 rounded-lg laptop:w-2/12 py-4 block h-full shadow-inner">
+                        <div class="bg-blue-600 rounded-lg laptop:w-2/12 py-4 block shadow-inner">
                           <div class="text-center tracking-wide p-2">
-                            <div class="text-white font-bold text-2xl ">
+                            <div class="text-white font-bold text-xl ">
                               {roommate.price}
                             </div>
-                            <div class="text-white font-normal text-md">
+                            <div class="text-white font-normal text-sm">
                               BHT/MONTH
                             </div>
                           </div>
                         </div>
                         <div class="w-full  laptop:w-11/12 xl:w-full px-1 bg-white  laptop:px-2 laptop:py-2 tracking-wide">
                           <div class="flex flex-row mt-2 laptop:justify-start justify-center">
-                            <div class="text-gray-700 font-medium text-sm text-center laptop:text-left px-2">
-                              <i class="far fa-clock"></i> 1:30 PM
+                            <div class="text-gray-700 font-medium text-sm  laptop:text-left px-2">
+                              <i class="far fa-clock"></i> Posted by :{' '}
+                              {console.log(roommate)}
+                              {roommate.user.email}
                             </div>
-                            <div class="text-gray-700 font-medium text-sm text-center laptop:text-left px-2">
-                              Organiser : {roommate.user.email}
-                            </div>
                           </div>
-                          <div class="font-semibold text-gray-800 text-xl text-center laptop:text-left px-2">
-                            International Conference Dubai
+                          <div class="font-semibold text-gray-800 text-sm  laptop:text-left px-2">
+                            Gender: {checkGender()}
                           </div>
-
-                          <div class="text-gray-600 font-medium text-sm pt-1 text-center laptop:text-left px-2">
-                            A-142/1, A-142, Ganesh Nagar, Tilak Nagar, New
-                            Delhi, 110018
+                          <div class="font-semibold text-gray-800 text-sm  laptop:text-left px-2">
+                            Age: {checkAge()}
                           </div>
+                          <div class="font-semibold text-gray-800 text-sm laptop:text-left px-2">
+                            Level: {checkLevel()} year
+                          </div>
+                          <div class="text-gray-600 font-medium text-sm pt-1 text-center laptop:text-left px-2"></div>
                         </div>
                         <div class="flex flex-row items-center w-full laptop:w-1/3 bg-white laptop:justify-end justify-center px-2 py-4 laptop:px-0">
                           <span class="tracking-wider text-gray-600 bg-gray-200 px-2 text-sm rounded leading-loose mx-2 font-semibold">
