@@ -235,15 +235,15 @@ const FindMatch_card = () => {
 
                   const checkLevel = () => {
                     if (roommate.firstYear === true) {
-                      return '1';
+                      return '1 year';
                     } else if (roommate.secYear === true) {
-                      return '2';
+                      return '2 years';
                     } else if (roommate.thirdYear === true) {
-                      return '3';
+                      return '3 years';
                     } else if (roommate.fourthYear === true) {
-                      return '4';
+                      return '4 years';
                     } else if (roommate.morethanfourthYear === true) {
-                      return '5';
+                      return 'More than 5 years';
                     }
                   };
 
@@ -275,7 +275,7 @@ const FindMatch_card = () => {
                             Age: {checkAge()}
                           </div>
                           <div class="font-semibold text-gray-800 text-sm laptop:text-left px-2">
-                            Level: {checkLevel()} year
+                            Level: {checkLevel()}
                           </div>
                           <div class="text-gray-600 font-medium text-sm pt-1 text-center laptop:text-left px-2"></div>
                         </div>

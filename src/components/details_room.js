@@ -142,7 +142,7 @@ const DetailsRoom = () => {
                   </h3>
                   <div className="mt-4 space-y-6">
                     <p className="text-sm text-gray-600">
-                      {profileowner.location}
+                      {/* {profileowner.location} */}
                     </p>
                   </div>
                 </div>

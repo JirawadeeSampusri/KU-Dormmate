@@ -207,7 +207,7 @@ export default function ScrollDialog_renter() {
         aria-describedby="scroll-dialog-description"
       >
         <DialogTitle id="scroll-dialog-title">Post Match</DialogTitle>
-        <form>
+        <form action="#href">
           <DialogContent dividers={scroll === 'paper'}>
             <div className="px-5 pb-5">
               {/* Place */}
