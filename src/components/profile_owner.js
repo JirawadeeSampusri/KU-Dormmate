@@ -87,9 +87,6 @@ const Profile_Owner = () => {
             <h1 className="text-xl mb-2 mt-2 font-semibold">
               {name ? name : 'Owner '}
             </h1>
-            <h4 className="text-sm mb-4  font-semibold">
-              Join since {auth.currentUser.metadata.creationTime}
-            </h4>
             <div className="flex">
               <div className="flex-grow ">
                 <ScrollDialog />

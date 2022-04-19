@@ -4,12 +4,12 @@ import Button from '@mui/material/Button';
 import { getAuth, signOut } from 'firebase/auth';
 
 const Profile_Renter = () => {
-  const auth = getAuth();
+  const auth1 = getAuth();
   const logout = async () => {
-    await signOut(auth);
+    await signOut(auth1);
     window.location.replace('/login_renter');
   };
-  console.log(auth);
+
   return (
     <div>
       <Navbar />
@@ -21,12 +21,8 @@ const Profile_Renter = () => {
             className="bg w-full h-full object-cover object-center absolute z-0"
           />
           <div className="flex flex-col justify-center items-center relative h-full bg-black bg-opacity-50 text-white">
-            <h1 className="text-xl mt-2 font-semibold">
-              {auth.currentUser.email}
-            </h1>
-            <h4 className="text-sm mb-4  font-semibold">
-              Join since {auth.currentUser.metadata.creationTime}
-            </h4>
+            <h1 className="text-xl mt-2 font-semibold">Renter</h1>
+            <h2 className="text-sm mb-2 font-semibold">jirawadee.sa@ku.th</h2>
             <div className="flex">
               <div className="flex-grow ">
                 <ScrollDialog_renter />
@@ -70,12 +66,11 @@ const Profile_Renter = () => {
                   <h3 className="text-2xl font-semibold">Basic Information</h3>
                   <hr />
                 </div>
-
                 <div className="form-item">
                   <label className="text-xl ">Email</label>
                   <input
                     type="text"
-                    value={auth.currentUser.email}
+                    value="jirawadee.sa@ku.th"
                     className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
                   />
                 </div>
