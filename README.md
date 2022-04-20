@@ -11,7 +11,7 @@ Ku Dormmate, a web application that's facilitated for KU students to gain inform
 
 ## Project Documents
 - ***[Project report](https://drive.google.com/file/d/12VCVbXbBppmWtmzLl8QF2f3eBZ61b0-O/view?usp=sharing)***
-- ***[Mockups Design](https://www.figma.com/file/IjP9BPiEINllFOec3W5lfP/KU-Dorm-Mate?node-id=0%3A1)***
+- ***[Mockups Design](https://www.figma.com/file/IjP9BPiEINllFOec3W5lfP/KU-Dorm-Mate?node-id=0%3A1)*** [Old Version]
 
 ### Getting Started
 1. Clone the repository.
