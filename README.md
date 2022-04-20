@@ -3,9 +3,6 @@
 Ku Dormmate, a web application that can help to find suitable dormitories and roommates
 
 ## Contributors
-<a href="https://github.com/bleachjade/Kvent/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=bleachjade/Kvent" />
-</a>
 
 | Name | Roles | GitHub |
 |---------------------------|--------------------------|-------------------------------------------------------|
