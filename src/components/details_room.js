@@ -142,7 +142,7 @@ const DetailsRoom = () => {
                   </h3>
                   <div className="mt-4 space-y-6">
                     <p className="text-sm text-gray-600">
-                      {/* {profileowner.location} */}
+                      {profileowner.location}
                     </p>
                   </div>
                 </div>
@@ -173,16 +173,6 @@ const DetailsRoom = () => {
             {/* <!-- Description and details --> */}
             <div>
               <h3 className="sr-only">Description</h3>
-
-              {/* <div className="space-y-6">
-                <p className="text-base text-gray-900">
-                  The Basic Tee 6-Pack allows you to fully express your vibrant
-                  personality with three grayscale options. Feeling adventurous?
-                  Put on a heather gray tee. Want to be a trendsetter? Try our
-                  exclusive colorway: &quot;Black&quot;. Need to add an extra
-                  pop of color to your outfit? Our white tee has you covered.
-                </p>
-              </div> */}
             </div>
 
             <div className="">
@@ -208,12 +198,6 @@ const DetailsRoom = () => {
                     <ImageListItem key={file}>
                       <img src={file} loading="lazy" />
                       ))
-                      {/* <img
-                     src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                     srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                     alt={item.title}
-                     loading="lazy"
-                   /> */}
                     </ImageListItem>
                   ))}
                 </ImageList>
@@ -224,12 +208,6 @@ const DetailsRoom = () => {
                     <ImageListItem key={file}>
                       <img src={file} loading="lazy" />
                       ))
-                      {/* <img
-                     src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-                     srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                     alt={item.title}
-                     loading="lazy"
-                   /> */}
                     </ImageListItem>
                   ))}
                 </ImageList>

@@ -93,37 +93,6 @@ const SavedDorm = () => {
                       </div>
                     </article>
                   </div>
-                  // <div>
-                  //   <article className="bg-white group relative rounded-lg overflow-hidden shadow-laptop hover:shadow-2xl transform duration-200">
-                  //     <div className="relative w-full h-80 tablet:h-48 laptop:h-64  head-text">
-                  //       {/* {room.file.map((file) => (
-                  //               <img key={file} src={file} />
-                  //             ))} */}
-                  //            { console.log(value)}
-                  //       <img
-                  //         src={value.room.file[0]}
-                  //         className="w-full h-full object-center object-cover"
-                  //       />
-                  //       <div className="text-on-image">
-                  //         <p className="text-md"> {value.room.user.email}</p>
-                  //       </div>
-                  //     </div>
-                  //     {/* <div className="px-3 py-4">
-                  //       <h3 className="text-sm text-gray-500 pb-2">
-                  //         <a
-                  //           className="bg-teal-600 py-1 px-2 text-white rounded-lg"
-                  //           href="#"
-                  //         >
-                  //           <span className="absolute inset-0"></span>
-                  //           {value.room.price} BHT
-                  //         </a>
-                  //       </h3>
-                  //       <p className="text-base font-semibold text-gray-900 group-hover:text-teal-600">
-                  //         {value.room}{' '}
-                  //       </p>
-                  //     </div> */}
-                  //   </article>
-                  // </div>
                 ))}
               </div>
             </div>

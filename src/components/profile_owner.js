@@ -96,11 +96,6 @@ const Profile_Owner = () => {
                   <Button variant="outlined">Posted</Button>
                 </a>
               </div>
-              <div className="flex-grow ml-2 ">
-                <a className="no-underline" href="./saved_dorm">
-                  <Button variant="outlined">Saved</Button>
-                </a>
-              </div>
             </div>
           </div>
         </div>

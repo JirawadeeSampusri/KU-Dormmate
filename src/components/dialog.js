@@ -38,7 +38,6 @@ export default function ScrollDialog() {
     e.preventDefault();
 
     const file = e.target[0].files[0];
-    console.log(file);
     uploadFiles(file);
   };
 
@@ -98,9 +97,7 @@ export default function ScrollDialog() {
     console.log(response);
     console.log(file);
 
-    if (!response) {
-      handleClose();
-    }
+    handleClose();
   };
 
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
