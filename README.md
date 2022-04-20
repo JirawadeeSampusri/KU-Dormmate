@@ -1,6 +1,6 @@
 # KU Dormmate 
 
-Ku Dormmate, a web application that can help to find suitable dormitories and roommates
+Ku Dormmate, a web application that's facilitated for KU students to gain information about dorms around  Kasetsart university and also find or match a roommate that they prefer, as it allows people interested in the same dormitory to contact each other.
 
 ## Contributors
 
