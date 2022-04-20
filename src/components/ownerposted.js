@@ -17,7 +17,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import useFirebase from '../usefirebase';
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import Navbar from './navbar';
+import Navbar from '../components/navbar_owner';
 
 const OwnerPosted = () => {
   const { user, db } = useFirebase();
